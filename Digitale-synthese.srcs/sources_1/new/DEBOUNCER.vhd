@@ -30,7 +30,7 @@ end process;
 
 -- COMBINATORICAL COMPONENT
 	--SHIFT REGISTER
-process(cha,shiftreg_pres(4)) begin
+process(cha, shiftreg_pres(4), sh, clk) begin
 	sh <= cha xor shiftreg_pres(4);
 	if(sh = '1') then -- shift register
 		shiftreg_next(0) <= cha;
