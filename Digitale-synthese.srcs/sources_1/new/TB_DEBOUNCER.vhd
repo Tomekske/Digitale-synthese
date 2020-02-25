@@ -17,7 +17,7 @@ component DEBOUNCER
 	);
 end component;
 
-for uut : counter use entity work.DEBOUNCER(Behavioral);
+for uut : DEBOUNCER use entity work.DEBOUNCER(Behavioral);
  
 constant period : time := 100 ns;
 constant delay  : time :=  10 ns;
@@ -91,6 +91,3 @@ tb : PROCESS
    END PROCESS;
 
   END;
-
-
-
