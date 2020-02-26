@@ -1,6 +1,6 @@
 # Digitale synthese
 
-## Module List
+## Module List (SENDER)
 
 | Layer   | Module                        | Dev             | State      |
 | ------- | ----------------------------- | --------------- | -----------|
@@ -8,3 +8,10 @@
 | APL     | EDGEDETECT                    | Jordy           | **TESTED** |
 | APL     | SEG7DECODER                   | Tomek           | OPEN       |
 | APL     | UPDOWNCOUNTER                 | Jordy           | **TESTED** |
+
+## Layer List (RECEIVER
+
+| Layer   | Module                        | Dev             | State      |
+| ------- | ----------------------------- | --------------- | -----------|
+
+
