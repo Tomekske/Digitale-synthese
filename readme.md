@@ -7,4 +7,4 @@
 | APL     | DEBOUNCER		          | Tomek           | **TESTED** |
 | APL     | EDGEDETECT                    | Jordy           | **TESTED** |
 | APL     | SEG7DECODER                   | Tomek           | OPEN       |
-| APL     | UPDOWNCOUNTER                 | Jordy           | OPEN       |
+| APL     | UPDOWNCOUNTER                 | Jordy           | **TESTED** |
