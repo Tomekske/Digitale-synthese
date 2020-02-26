@@ -4,6 +4,7 @@ Running: C:/Xilinx/Vivado/2019.2/bin/unwrapped/win64.o/xelab.exe -wto 0a7aab739e
 Using 2 slave threads.
 Starting static elaboration
 Completed static elaboration
+<<<<<<< HEAD
 Starting simulation data flow analysis
 Completed simulation data flow analysis
 Time Resolution for simulation is 1ps
@@ -16,3 +17,6 @@ Compiling package ieee.std_logic_unsigned
 Compiling architecture behavioral of entity xil_defaultlib.EDGEDETECT [edgedetect_default]
 Compiling architecture structural of entity xil_defaultlib.edgedetect_tb
 Built simulation snapshot EDGEDETECT_tb_behav
+=======
+INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel
+>>>>>>> master
