@@ -1,4 +1,0 @@
-Running: xsim.dir/DEBOUNCER_tb_behav/xsimk.exe -simmode gui -wdb DEBOUNCER_tb_behav.wdb -simrunnum 0 -socket 51204
-Design successfully loaded
-Design Loading Memory Usage: 4936 KB (Peak: 4936 KB)
-Design Loading CPU Usage: 0 ms
