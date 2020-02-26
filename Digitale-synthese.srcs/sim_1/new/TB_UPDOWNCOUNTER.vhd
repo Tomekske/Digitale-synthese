@@ -9,9 +9,10 @@ entity UPDOWNCOUNTER_tb is
 end UPDOWNCOUNTER_tb;
 
 architecture structural of UPDOWNCOUNTER_tb is 
-
+constant COUNT_WIDTH : integer := 4;
 -- Component Declaration
 component UPDOWNCOUNTER
+generic(COUNT_WIDTH : integer);
 port ( 
     up      :   IN STD_LOGIC;   -- count up signal
     down    :   IN STD_LOGIC;   -- count down signal
@@ -35,13 +36,16 @@ signal count 	: std_logic_vector(3 downto 0);
 
 BEGIN
 
-	uut: UPDOWNCOUNTER PORT MAP(
+    uut: UPDOWNCOUNTER 
+    generic map(COUNT_WIDTH => COUNT_WIDTH)
+    PORT MAP
+    (
       clk => clk,
       up => up,
       down => down,
       reset => reset,
-      count => count);
-
+      count => count
+    );
 	clock : process
    begin 
        clk <= '0';

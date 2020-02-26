@@ -7,8 +7,8 @@ use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 use ieee.std_logic_unsigned.all;
 
-CONSTANT COUNT_WIDTH    : integer := 4;     -- Bit size of the counter
 entity UPDOWNCOUNTER is
+    generic(COUNT_WIDTH : integer);
     port ( 
         up      :   IN STD_LOGIC;   -- count up signal
         down    :   IN STD_LOGIC;   -- count down signal
@@ -21,6 +21,7 @@ end UPDOWNCOUNTER;
 architecture Behavioral OF UPDOWNCOUNTER IS
     SIGNAL count_pres   : STD_LOGIC_VECTOR(COUNT_WIDTH-1 DOWNTO 0);     -- Internal mem for present state
     SIGNAL count_next   : STD_LOGIC_VECTOR(COUNT_WIDTH-1 DOWNTO 0);     -- Internal signal for next state
+begin
 -- SYNC COMPONENT
 process(clk,reset) begin
     if (reset = '1') then               -- Reset enable
