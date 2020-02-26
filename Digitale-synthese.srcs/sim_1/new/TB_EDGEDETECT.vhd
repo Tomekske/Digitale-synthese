@@ -57,7 +57,7 @@ tb : PROCESS
    procedure tbvector(constant stimvect : in std_logic_vector(1 downto 0))is
      begin
       reset <= stimvect(1);
-      cha <= stimvect(0);
+      sig <= stimvect(0);
 
        wait for period;
    end tbvector;
@@ -71,7 +71,8 @@ tb : PROCESS
 
       tbvector("00");       -- Do nothing
       wait for 4*period;
-
+    
+      wait for period/2;
       tbvector("01");       -- SIG signal active
       wait for 4*period;
 

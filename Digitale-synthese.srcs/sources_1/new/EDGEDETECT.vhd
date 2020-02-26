@@ -27,9 +27,13 @@ process(clk,reset) begin
     end if ;
 end process;
 -- COMBINATORIAL COMPONENT
-process(clk,delay_sig) begin
-    edge_sig <= sig AND (NOT delay_sig);    -- If SIG is HIGH and the delay low generate PULS
+process(clk,delay_sig,sig,reset) begin
+    if(reset = '1') then
+        edge_sig <= '0';
+    else
+        edge_sig <= sig AND (NOT delay_sig);    -- If SIG is HIGH and the delay low generate PULS
+    end if;
 end process;
 -- SIGNAL CONNECTIONS
-edge <= edge_sign;          -- Link to external connection
+edge <= edge_sig;          -- Link to external connection
 end Behavioral;

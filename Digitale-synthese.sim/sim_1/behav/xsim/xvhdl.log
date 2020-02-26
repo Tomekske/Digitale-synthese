@@ -1,4 +1,2 @@
-INFO: [VRFC 10-163] Analyzing VHDL file "D:/Programs/Digitale-synthese/Digitale-synthese.srcs/sources_1/new/DEBOUNCER.vhd" into library xil_defaultlib
-INFO: [VRFC 10-3107] analyzing entity 'DEBOUNCER'
-INFO: [VRFC 10-163] Analyzing VHDL file "D:/Programs/Digitale-synthese/Digitale-synthese.srcs/sim_1/new/TB_DEBOUNCER.vhd" into library xil_defaultlib
-INFO: [VRFC 10-3107] analyzing entity 'DEBOUNCER_tb'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Jordy/KU/Digitale-synthese/Digitale-synthese.srcs/sim_1/new/TB_EDGEDETECT.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'EDGEDETECT_tb'

@@ -1,0 +1,7 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"../../../../Digitale-synthese.srcs/sources_1/new/EDGEDETECT.vhd" \
+"../../../../Digitale-synthese.srcs/sim_1/new/TB_EDGEDETECT.vhd" \
+
+# Do not sort compile order
+nosort
