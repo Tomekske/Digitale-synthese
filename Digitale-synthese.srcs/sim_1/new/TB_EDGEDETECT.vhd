@@ -72,7 +72,7 @@ tb : PROCESS
       tbvector("00");       -- Do nothing
       wait for 4*period;
     
-      wait for period/2;
+      wait for period/2;    -- Offset of half a period
       tbvector("01");       -- SIG signal active
       wait for 4*period;
 
