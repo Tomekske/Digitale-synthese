@@ -8,7 +8,7 @@
 | ------- | ----------------------------- | --------------- | -----------|
 | APL     | DEBOUNCER		          | Tomek           | **TESTED** |
 | APL     | EDGEDETECT                    | Jordy           | **TESTED** |
-| APL     | SEG7DECODER                   | Tomek           | DEV        |
+| APL     | SEG7DECODER                   | Tomek           | **TESTED** |
 | APL     | UPDOWNCOUNTER                 | Jordy           | **TESTED** |
 | APL     | EDGEDETECT_STATE              | Jordy           | **TESTED** |
 | APL     | **APPLICATIONLAYER**          | T/J             | OPEN       |
