@@ -13,7 +13,7 @@
 | APL     | EDGEDETECT_STATE              | Jordy           | **TESTED** |
 | APL     | **APPLICATIONLAYER**          | T/J             | OPEN       |
 | DLL     | DATAREGISTER	          | Tomek           | OPEN       |
-| DLL     | SEQUENCECONTROLLER            | Jordy           | OPEN       |
+| DLL     | SEQUENCECONTROLLER            | Jordy           | **TESTED** |
 | DLL     | **DATALINKLAYER**             | T/J             | OPEN       |
 | ACL	  | PNGENERATOR		          | ...             | OPEN       |
 | ACL     | **ACCESLAYER**	          | T/J	            | OPEN       |
