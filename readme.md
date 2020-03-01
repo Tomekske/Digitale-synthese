@@ -15,7 +15,7 @@
 | DLL     | DATAREGISTER	          | Tomek           | OPEN       |
 | DLL     | SEQUENCECONTROLLER            | Jordy           | **TESTED** |
 | DLL     | **DATALINKLAYER**             | T/J             | OPEN       |
-| ACL	  | PNGENERATOR		          | ...             | OPEN       |
+| ACL	  | PNGENERATOR		          | Jordy           | DEV        |
 | ACL     | **ACCESLAYER**	          | T/J	            | OPEN       |
 | TX      | **TRANSMITTER**               | T/J             | OPEN       |
 
