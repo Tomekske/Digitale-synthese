@@ -9,7 +9,7 @@ entity SEQUENCECONTROLLER_tb is
 end SEQUENCECONTROLLER_tb;
 
 architecture structural of SEQUENCECONTROLLER_tb is 
-constant COUNT_WIDTH : integer := 8;
+constant COUNT_WIDTH : integer := 4;
 -- Component Declaration
 component SEQUENCECONTROLLER
 generic(COUNT_WIDTH : integer);

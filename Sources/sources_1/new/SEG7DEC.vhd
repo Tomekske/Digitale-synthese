@@ -8,8 +8,7 @@ use IEEE.STD_LOGIC_1164.ALL;
 entity SEG7DEC is
     Port( 
         data_in  : in STD_LOGIC_VECTOR (3 downto 0); -- input data
-        g_to_a   : out STD_LOGIC_VECTOR (6 downto 0); -- 7 segment output: [0-9][A-F]
-        dp       : out STD_LOGIC -- dot pointer
+        g_to_a   : out STD_LOGIC_VECTOR (6 downto 0) -- 7 segment output: [0-9][A-F]
     ); 
 end SEG7DEC;
 
@@ -34,7 +33,8 @@ begin
             when "1100" => g_to_a <= "1000110"; --C
             when "1101" => g_to_a <= "0100001"; --d
             when "1110" => g_to_a <= "0000110"; --E
-            when others => g_to_a <= "0001110"; --F
+            when "1111" => g_to_a <= "0001110"; --F
+            when others => g_to_a <= "0000000"; -- Fualt state
         end case;
     end process;    
 end Behavioral;
