@@ -11,7 +11,7 @@
 | APL     | SEG7DECODER                   | Tomek           | **TESTED** |
 | APL     | UPDOWNCOUNTER                 | Jordy           | **TESTED** |
 | APL     | EDGEDETECT_STATE              | Jordy           | **TESTED** |
-| APL     | **APPLICATIONLAYER**          | T/J             | OPEN       |
+| APL     | **APPLICATIONLAYER**          | T/J             | **TESTED** |
 | DLL     | DATAREGISTER	          | Tomek           | OPEN       |
 | DLL     | SEQUENCECONTROLLER            | Jordy           | **TESTED** |
 | DLL     | **DATALINKLAYER**             | T/J             | OPEN       |
