@@ -6,17 +6,16 @@ use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 use ieee.std_logic_unsigned.all;
 
-entity SEG7DEC_tb is
-end SEG7DEC_tb;
+entity TB_SEG7DEC is
+end TB_SEG7DEC;
 
-architecture structural of SEG7DEC_tb is 
+architecture structural of TB_SEG7DEC is 
 
 -- Component Declaration
 component SEG7DEC
     Port( 
         data_in  : in STD_LOGIC_VECTOR (3 downto 0);    -- input data
-        g_to_a   : out STD_LOGIC_VECTOR (6 downto 0);   -- 7 segment output: [0-9][A-F]
-        dp       : out STD_LOGIC                        -- dot pointer
+        g_to_a   : out STD_LOGIC_VECTOR (6 downto 0)   -- 7 segment output: [0-9][A-F]
     ); 
 end component;
 
@@ -28,14 +27,13 @@ signal end_of_sim : boolean := false;
 
 signal data_in  : STD_LOGIC_VECTOR (3 downto 0);
 signal g_to_a   : STD_LOGIC_VECTOR (6 downto 0);
-signal dp       : STD_LOGIC;
 
 BEGIN
 
     uut: SEG7DEC PORT MAP(
         data_in => data_in,
-        g_to_a => g_to_a,
-        dp => dp);
+        g_to_a => g_to_a
+        );
 
     
     tb : PROCESS
