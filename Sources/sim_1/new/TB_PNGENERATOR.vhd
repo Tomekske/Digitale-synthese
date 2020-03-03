@@ -7,7 +7,6 @@ entity PNGENERATOR_tb is
     end PNGENERATOR_tb;
 
 architecture structural of PNGENERATOR_tb is
-constant COUNT_WIDTH : integer := 4;
 
 component PNGENERATOR
     port ( 
