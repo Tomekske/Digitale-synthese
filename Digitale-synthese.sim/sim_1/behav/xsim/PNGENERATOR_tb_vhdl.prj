@@ -1,0 +1,7 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"../../../../Sources/sources_1/new/PNGENERATOR.vhd" \
+"../../../../Sources/sim_1/new/TB_PNGENERATOR.vhd" \
+
+# Do not sort compile order
+nosort

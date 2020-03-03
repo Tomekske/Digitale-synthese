@@ -15,8 +15,8 @@ entity PNGENERATOR is
     end PNGENERATOR;
 
 architecture Behavioral OF PNGENERATOR IS
-    CONSTANT SIGNAL PNCODE1  :  STD_LOGIC_VECTOR(4 DOWNTO 0) := "00010";
-    CONSTANT SIGNAL PNCODE2  :  STD_LOGIC_VECTOR(4 DOWNTO 0) := "00111";
+    CONSTANT PNCODE1  :  STD_LOGIC_VECTOR(4 DOWNTO 0) := "00010";
+    CONSTANT PNCODE2  :  STD_LOGIC_VECTOR(4 DOWNTO 0) := "00111";
     SIGNAL PNCODE1_pres      :  STD_LOGIC_VECTOR(4 DOWNTO 0);
     SIGNAL PNCODE2_pres      :  STD_LOGIC_VECTOR(4 DOWNTO 0);
     SIGNAL PNCODE1_next      :  STD_LOGIC_VECTOR(4 DOWNTO 0);
@@ -44,7 +44,7 @@ process(PNCODE1_pres) begin
     PNCODE2_next(3 DOWNTO 0) <= PNCODE2_pres (4 DOWNTO 1);
     PNCODE2_NEXT(4) <= ((PNCODE2_pres(0) XOR PNCODE2_pres(1)) XOR PNCODE2_pres(3) ) XOR PNCODE2_pres(4);
 
-    if(PNCODE1_pres = PNCODE1)then
+    if((PNCODE1_pres = PNCODE1) AND (reset = '0'))then
         pn_start <= '1';
     else
         pn_start <= '0';
