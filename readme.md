@@ -1,6 +1,8 @@
 # Digitale synthese
 
-## Module list:
+![alt text](https://alum.kuleuven.be/eng/HeritageFund/images/1-logo-firw-cmyk-logo.png/image "KuLeuven")
+
+## Layer list:
 
 ### Module List (TRANSMITTER)
 
@@ -19,7 +21,7 @@
 | ACL     | **ACCESLAYER**	          | T/J	            | :free:             |
 | TX      | **TRANSMITTER**               | T/J             | :free:             |
 
-### Layer List (RECEIVER)
+### Module List (RECEIVER)
 
 | Layer   | Module                        | Dev             | State        |
 | ------- | ----------------------------- | --------------- | -------------|
