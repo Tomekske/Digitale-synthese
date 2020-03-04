@@ -6,7 +6,7 @@
 
 | Layer   | Module                        | Dev             | State      |
 | ------- | ----------------------------- | --------------- | -----------|
-| APL     | DEBOUNCER		          | Tomek           | **TESTED** |
+| APL     | DEBOUNCER		          | Tomek           | :white_check_mark: |
 | APL     | EDGEDETECT                    | Jordy           | **TESTED** |
 | APL     | SEG7DECODER                   | Tomek           | **TESTED** |
 | APL     | UPDOWNCOUNTER                 | Jordy           | **TESTED** |
