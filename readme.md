@@ -4,20 +4,20 @@
 
 ### Module List (TRANSMITTER)
 
-| Layer   | Module                        | Dev             | State      |
-| ------- | ----------------------------- | --------------- | -----------|
+| Layer   | Module                        | Dev             | State              |
+| ------- | ----------------------------- | --------------- | -------------------|
 | APL     | DEBOUNCER		          | Tomek           | :white_check_mark: |
-| APL     | EDGEDETECT                    | Jordy           | **TESTED** |
-| APL     | SEG7DECODER                   | Tomek           | **TESTED** |
-| APL     | UPDOWNCOUNTER                 | Jordy           | **TESTED** |
-| APL     | EDGEDETECT_STATE              | Jordy           | **TESTED** |
-| APL     | **APPLICATIONLAYER**          | T/J             | **TESTED** |
-| DLL     | DATAREGISTER	          | Tomek           | OPEN       |
-| DLL     | SEQUENCECONTROLLER            | Jordy           | **TESTED** |
-| DLL     | **DATALINKLAYER**             | T/J             | OPEN       |
-| ACL	  | PNGENERATOR		          | Jordy           | **TESTED** |
-| ACL     | **ACCESLAYER**	          | T/J	            | OPEN       |
-| TX      | **TRANSMITTER**               | T/J             | OPEN       |
+| APL     | EDGEDETECT                    | Jordy           | :white_check_mark: |
+| APL     | SEG7DECODER                   | Tomek           | :white_check_mark: |
+| APL     | UPDOWNCOUNTER                 | Jordy           | :white_check_mark: |
+| APL     | EDGEDETECT_STATE              | Jordy           | :white_check_mark: |
+| APL     | **APPLICATIONLAYER**          | T/J             | :white_check_mark: |
+| DLL     | DATAREGISTER	          | Tomek           | :free:             |
+| DLL     | SEQUENCECONTROLLER            | Jordy           | :white_check_mark: |
+| DLL     | **DATALINKLAYER**             | T/J             | :free:             |
+| ACL	  | PNGENERATOR		          | Jordy           | :white_check_mark: |
+| ACL     | **ACCESLAYER**	          | T/J	            | :free:             |
+| TX      | **TRANSMITTER**               | T/J             | :free:             |
 
 ### Layer List (RECEIVER)
 
