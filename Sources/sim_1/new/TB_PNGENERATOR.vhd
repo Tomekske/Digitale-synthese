@@ -63,10 +63,9 @@ tb : PROCESS
         
         tbvector("00");       -- Do nothing
         wait for 4*period;
-
         tbvector("01");       -- Reset module
         wait for 4*period;
-        tbvector("00");       -- Do nothing
+        tbvector("00");       -- Do nothing, code generated
         wait for 100*period;
         end_of_sim <= true;
         wait;
