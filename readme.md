@@ -1,6 +1,6 @@
 # Digitale synthese
 
-![alt text](https://alum.kuleuven.be/eng/HeritageFund/images/1-logo-firw-cmyk-logo.png/image | width="100")
+![alt text](https://alum.kuleuven.be/eng/HeritageFund/images/1-logo-firw-cmyk-logo.png/image | width=100)
 
 ## Layer list:
 
