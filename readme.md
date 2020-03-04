@@ -21,19 +21,19 @@
 
 ### Layer List (RECEIVER)
 
-| Layer   | Module                        | Dev             | State      |
-| ------- | ----------------------------- | --------------- | -----------|
-| APL     | DATALATCH                     | Tomek           | OPEN       |
-| APL     | **APPLICATIONLAYER**          | T/J             | OPEN       |
-| DLL     | DATASHIFTREG	          | Jordy           | OPEN       |
-| DLL     | **DATALINKLAYER**             | T/J             | OPEN       |
-| ACL     | DPLL                          | Jordy           | OPEN       |
-| ACL     | MATCHEDFILTER	          | Tomek           | OPEN       |
-| ACL     | PNGENERATOR(TX)               | NA              | NA         |
-| ACL     | DESPREADING			  | Jordy           | OPEN       |
-| ACL     | CORRELATOR		          | Tomek           | OPEN       |
-| ACL     | **ACCESLAYER**                | T/J             | OPEN       |
-| RX      | **RECEIVER**                  | T/J             | OPEN       |
+| Layer   | Module                        | Dev             | State        |
+| ------- | ----------------------------- | --------------- | -------------|
+| APL     | DATALATCH                     | Tomek           | :free:       |
+| APL     | **APPLICATIONLAYER**          | T/J             | :free:       |
+| DLL     | DATASHIFTREG	          | Jordy           | :free:       |
+| DLL     | **DATALINKLAYER**             | T/J             | :free:       |
+| ACL     | DPLL                          | Jordy           | :free:       |
+| ACL     | MATCHEDFILTER	          | Tomek           | :free:       |
+| ACL     | PNGENERATOR(TX)               | NA              | :x:          |
+| ACL     | DESPREADING			  | Jordy           | :free:       |
+| ACL     | CORRELATOR		          | Tomek           | :free:       |
+| ACL     | **ACCESLAYER**                | T/J             | :free:       |
+| RX      | **RECEIVER**                  | T/J             | :free:       |
 
 ## Documentation:
 
