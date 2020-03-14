@@ -9,7 +9,7 @@ entity SEQUENCECONTROLLER_tb is
 end SEQUENCECONTROLLER_tb;
 
 architecture structural of SEQUENCECONTROLLER_tb is 
-constant COUNT_WIDTH : integer := 4;
+constant COUNT_WIDTH : integer := 11;
 -- Component Declaration
 component SEQUENCECONTROLLER
 generic(COUNT_WIDTH : integer);
@@ -77,7 +77,7 @@ tb : PROCESS
       tbvector("00");       -- Do nothing
       wait for 4*period;
 
-      for i in 0 to 10 loop
+      for i in 0 to 20 loop
         tbvector("01");       -- Do nothing
         wait for period;
         tbvector("00");       -- Do nothing
