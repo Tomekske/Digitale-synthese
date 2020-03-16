@@ -14,9 +14,9 @@
 | APL     | UPDOWNCOUNTER                 | Jordy           | :white_check_mark: |
 | APL     | EDGEDETECT_STATE              | Jordy           | :white_check_mark: |
 | APL     | **APPLICATIONLAYER**          | T/J             | :white_check_mark: |
-| DLL     | DATAREGISTER	          | Tomek           | :free:             |
+| DLL     | DATAREGISTER	          | Tomek           | :white_check_mark: |
 | DLL     | SEQUENCECONTROLLER            | Jordy           | :white_check_mark: |
-| DLL     | **DATALINKLAYER**             | T/J             | :free:             |
+| DLL     | **DATALINKLAYER**             | T/J             | :white_check_mark: |
 | ACL	  | PNGENERATOR		          | Jordy           | :white_check_mark: |
 | ACL     | **ACCESLAYER**	          | T/J	            | :free:             |
 | TX      | **TRANSMITTER**               | T/J             | :free:             |
