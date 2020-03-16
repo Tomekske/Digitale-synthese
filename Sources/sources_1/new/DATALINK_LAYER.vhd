@@ -39,8 +39,8 @@ component SEQUENCECONTROLLER is
     );
 end component;
 
-SIGNAL SHIFTREF_LD          : STD_LOGIC;
-SIGNAL SHIFTREF_SH          : STD_LOGIC;
+SIGNAL SHIFTREG_LD  : STD_LOGIC;
+SIGNAL SHIFTREG_SH  : STD_LOGIC;
 
 begin
 -- Port mapping
