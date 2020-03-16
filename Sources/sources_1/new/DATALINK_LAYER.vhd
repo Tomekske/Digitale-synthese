@@ -26,7 +26,7 @@ component DATAREGISTER is
         data    : IN STD_LOGIC_VECTOR(SHIFT_WIDTH - 1 downto 0);    -- variavle input data
         sdo     : OUT STD_LOGIC                                     -- serial data out
     );
-end comoponent;
+end component;
 
 component SEQUENCECONTROLLER is
     generic(COUNT_WIDTH : integer);
@@ -39,34 +39,33 @@ component SEQUENCECONTROLLER is
     );
 end component;
 
-SIGNAL SHIFTREF_LD          : STD_LOGIC;
-SIGNAL SHIFTREF_SH          : STD_LOGIC;
+SIGNAL SHIFTREG_LD  : STD_LOGIC;
+SIGNAL SHIFTREG_SH  : STD_LOGIC;
 
 begin
 -- Port mapping
-
 -- DATAREGISTER
-DATAREGISTER: DATAREGISTER 
+DATAREG: DATAREGISTER 
     generic map(DATA_WIDTH + 7)
     port map(
         clk => clk, 
         reset => reset, 
-        SHIFTREG_LD => ld, 
-        SHIFTREG_SH => sh, 
-        "0111110" => data(DATA_WIDTH + 6 DOWNTO DATA_WIDTH),
-        data => data(DATA_WIDTH - 1 DOWNTO 0),
-        sdo_out => sdo
-        );
+        ld => SHIFTREG_LD, 
+        sh => SHIFTREG_SH, 
+        data(DATA_WIDTH + 6 DOWNTO DATA_WIDTH) => "0111110",
+        data(DATA_WIDTH - 1 DOWNTO 0) => data,
+        sdo => sdo_out
+    );
 
 -- SEQUENCECONTROLLER
-SEQUENCECONTROLLER: SEQUENCECONTROLLER 
+SEQUENCE: SEQUENCECONTROLLER 
     generic map(DATA_WIDTH + 7)
     port map(
         clk => clk,
         reset => reset,
-        pn_start => nextstate,
-        SHIFTREG_SH => sh_reg,
-        SHIFTREG_LD => ld_reg 
+        nextstate => pn_start,
+        sh_reg => SHIFTREG_SH,
+        ld_reg => SHIFTREG_LD  
     );
 
 -- Signal linking
