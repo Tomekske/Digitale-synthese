@@ -34,7 +34,7 @@ signal sdo_out  : std_logic;
 
 BEGIN
 
-    uut: DATALINK_LAYER_tb 
+    uut: DATALINK_LAYER
     generic map(DATA_WIDTH => DATA_WIDTH)
     PORT MAP(clk, reset, pn_start, data, sdo_out);
 
