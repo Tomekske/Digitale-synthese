@@ -69,9 +69,6 @@ SEQUENCECONTROLLER: SEQUENCECONTROLLER
         SHIFTREG_LD => ld_reg 
     );
 
--- 7SEGMENT
-SEG7: SEG7DEC port map(COUNTER_out, seg7_out);
-
 -- Signal linking
 
 end Behavioral;
