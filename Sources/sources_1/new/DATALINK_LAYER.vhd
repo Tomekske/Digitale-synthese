@@ -46,13 +46,13 @@ begin
 -- Port mapping
 -- DATAREGISTER
 DATAREG: DATAREGISTER 
-    generic map(DATA_WIDTH + 7)
+    generic map(DATA_WIDTH + 7) -- Data_width size + 7 bit preamble
     port map(
         clk => clk, 
         reset => reset, 
         ld => SHIFTREG_LD, 
         sh => SHIFTREG_SH, 
-        data(DATA_WIDTH + 6 DOWNTO DATA_WIDTH) => "0111110",
+        data(DATA_WIDTH + 6 DOWNTO DATA_WIDTH) => "0111110",    -- Hard coded preamble pattern
         data(DATA_WIDTH - 1 DOWNTO 0) => data,
         sdo => sdo_out
     );
