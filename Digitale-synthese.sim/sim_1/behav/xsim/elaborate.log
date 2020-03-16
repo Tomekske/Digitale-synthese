@@ -1,0 +1,20 @@
+Vivado Simulator 2019.2
+Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2019.2/bin/unwrapped/win64.o/xelab.exe -wto 901cc444230848afb22f640eb4811a29 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot DATALINK_LAYER_tb_behav xil_defaultlib.DATALINK_LAYER_tb -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_unsigned
+Compiling architecture behavioral of entity xil_defaultlib.DATAREGISTER [\DATAREGISTER(shift_width=11)\]
+Compiling architecture behavioral of entity xil_defaultlib.SEQUENCECONTROLLER [\SEQUENCECONTROLLER(count_width=...]
+Compiling architecture behavioral of entity xil_defaultlib.DATALINK_LAYER [\DATALINK_LAYER(data_width=4)\]
+Compiling architecture structural of entity xil_defaultlib.datalink_layer_tb
+Built simulation snapshot DATALINK_LAYER_tb_behav
