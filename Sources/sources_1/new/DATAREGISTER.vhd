@@ -42,7 +42,7 @@ process(reset,clk) begin
 end process;
 
 -- COMB COMPONENT
-process(data_pres) begin
+process(data_pres,clk) begin
     -- data_next is calculted by bitshifting the array
     -- data_next(SHIFT_WIDTH - 1 DOWNTO 1): only values between (MSB and LSB + 1) are assigned
     -- data_pres(SHIFT_WIDTH - 2 DOWNTO 0): only value between(MSB - 1 and LSB) are shifted 
@@ -52,5 +52,5 @@ process(data_pres) begin
 end process;
 --SIGNAL LINK
 -- serial data out contains only one bit -> MSB
-sdo <= data_pres(SHIFT_WIDTH-1);
+sdo <= data_pres(SHIFT_WIDTH - 1);
 end Behavioral;
