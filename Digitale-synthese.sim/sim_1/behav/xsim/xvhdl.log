@@ -1,6 +1,0 @@
-INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Jordy/KU/Digitale-synthese/Sources/sources_1/new/ACCES_LAYER.vhd" into library xil_defaultlib
-INFO: [VRFC 10-3107] analyzing entity 'ACCES_LAYER'
-INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Jordy/KU/Digitale-synthese/Sources/sources_1/new/PNGENERATOR.vhd" into library xil_defaultlib
-INFO: [VRFC 10-3107] analyzing entity 'PNGENERATOR'
-INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Jordy/KU/Digitale-synthese/Sources/sim_1/new/TB_ACCES_LAYER.vhd" into library xil_defaultlib
-INFO: [VRFC 10-3107] analyzing entity 'ACCES_LAYER_tb'
