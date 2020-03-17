@@ -16,7 +16,7 @@
 | DLL     | SEQUENCECONTROLLER            | Jordy           | :white_check_mark: |
 | DLL     | **DATALINKLAYER**             | T/J             | :white_check_mark: |
 | ACL	  | PNGENERATOR		          | Jordy           | :white_check_mark: |
-| ACL     | **ACCESLAYER**	          | T/J	            | :free:             |
+| ACL     | **ACCESLAYER**	          | T/J	            | :white_check_mark: |
 | TX      | **TRANSMITTER**               | T/J             | :free:             |
 
 ### Module List (RECEIVER)
