@@ -4,7 +4,6 @@
 library ieee;
 use ieee.std_logic_1164.all;
 entity ACCES_LAYER is
-    generic(DATA_WIDTH : integer);
     port ( 
         clk         :   IN STD_LOGIC;   -- Clock signal
         reset       :   IN STD_LOGIC;   -- Active high reset
