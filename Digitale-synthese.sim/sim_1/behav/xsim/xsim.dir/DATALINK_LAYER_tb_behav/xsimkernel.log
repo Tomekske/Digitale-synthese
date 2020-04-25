@@ -1,7 +1,0 @@
-Running: xsim.dir/DATALINK_LAYER_tb_behav/xsimk.exe -simmode gui -wdb DATALINK_LAYER_tb_behav.wdb -simrunnum 0 -socket 55431
-Design successfully loaded
-Design Loading Memory Usage: 5304 KB (Peak: 5304 KB)
-Design Loading CPU Usage: 0 ms
-Simulation completed
-Simulation Memory Usage: 5904 KB (Peak: 5904 KB)
-Simulation CPU Usage: 0 ms
