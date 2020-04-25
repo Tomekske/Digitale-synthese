@@ -17,7 +17,7 @@
 | DLL     | **DATALINKLAYER**             | T/J             | :white_check_mark: |
 | ACL	  | PNGENERATOR		          | Jordy           | :white_check_mark: |
 | ACL     | **ACCESLAYER**	          | T/J	            | :white_check_mark: |
-| TX      | **TRANSMITTER**               | T/J             | :free:             |
+| TX      | **TRANSMITTER**               | T/J             | :white_check_mark: |
 
 ### Module List (RECEIVER)
 
