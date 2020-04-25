@@ -7,7 +7,6 @@ use ieee.numeric_std.all;
 use ieee.std_logic_unsigned.all;
 
 entity DPLL is
-    generic(COUNT_WIDTH : integer);
     port ( 
             clk         : IN STD_LOGIC;     -- Clk signal
             reset       : IN STD_LOGIC;     -- Reset signal
@@ -38,10 +37,10 @@ architecture Behavioral OF DPLL IS
     SIGNAL sema_next    : STD_LOGIC_VECTOR(4 DOWNTO 0);
     SIGNAL sema_mode    : STD_LOGIC;
     -- NCO SIGNALS
-    SIGNAL nco_counter      : STD_LOGIC_VECTOR(4 DOWNTO 0);
-    SIGNAL nco_counter_next : STD_LOGIC_VECTOR(4 DOWNTO 0);
-    SIGNAL nco_counter_rl   : STD_LOGIC_VECTOR(4 DOWNTO 0);
-    
+    SIGNAL nco_counter      : STD_LOGIC_VECTOR(5 DOWNTO 0);
+    SIGNAL nco_counter_next : STD_LOGIC_VECTOR(5 DOWNTO 0);
+    SIGNAL nco_counter_rl   : STD_LOGIC_VECTOR(5 DOWNTO 0);
+begin   
 ----------------------------------------------------------------------------------------
 ----------------------------------------------------------------------------------------
 -- TRANSITION DETECTION [TD]
@@ -75,7 +74,7 @@ process(reset,clk,extb) begin
 
 end process;
 
-process(tsd_counter,tsd_counter_next) begin
+process(tsd_counter,tsd_counter_next,extb) begin
     -- COUNTER with overflow to zero and external reset
     if(extb = '1') then
         tsd_counter_next <= (OTHERS => '0');
@@ -85,15 +84,15 @@ process(tsd_counter,tsd_counter_next) begin
 
     -- OUTPUT DECODER
     if(tsd_counter_next >= 11) then
-        seg_mode_next <= "10000"
+        seg_mode_next <= "10000";
     elsif(tsd_counter_next >= 9)then
-        seg_mode_next <= "01000"
+        seg_mode_next <= "01000";
     elsif(tsd_counter_next >= 7)then
-        seg_mode_next <= "00100"
+        seg_mode_next <= "00100";
     elsif(tsd_counter_next >= 5)then
-        seg_mode_next <= "00010"
+        seg_mode_next <= "00010";
     else
-        seg_mode_next <= "00001"
+        seg_mode_next <= "00001";
     end if;
 end process;
 
@@ -103,6 +102,7 @@ end process;
 process(clk,reset) begin
     if(reset = '1') then
         sema <= "00100";
+        sema_mode <= '0';
     else
         if(rising_edge(clk))then
             if(chip_0_signal = '1')then
@@ -116,9 +116,9 @@ process(clk,reset) begin
     end if;
 end process;
 
-process(sema_mode) begin
+process(sema_mode,seg_mode) begin
     if(sema_mode = '1')then
-        sema_next <= seg_mode;
+        sema_next <= seg_mode_next;
     else
         sema_next <= "00100";
     end if;
@@ -137,7 +137,7 @@ process(reset,clk) begin
     end if;
 end process;
 
-process(reset,nco_counter) begin
+process(reset,nco_counter,nco_counter_rl) begin
     --Reload counter controller
     if(reset = '1')then
         chip_0_signal <= '0';
@@ -152,19 +152,20 @@ process(reset,nco_counter) begin
     --Sema Reload value decoder
     case(sema) is
         when "00001" =>     -- A
-            nco_counter_rl <= 8 + 3;
+            nco_counter_rl <=  std_logic_vector(to_unsigned(16 + 3 ,6));
         when "00010" =>     -- B
-            nco_counter_rl <= 8 + 1;
+            nco_counter_rl <= std_logic_vector(to_unsigned(16 + 1 ,6));
         when "00100" =>     -- C
-            nco_counter_rl <= 8;
+            nco_counter_rl <= std_logic_vector(to_unsigned(16 ,6));
         when "01000" =>     -- D
-            nco_counter_rl <= 8 - 1;
+            nco_counter_rl <= std_logic_vector(to_unsigned(16 - 1 ,6));
         when "10000" =>     -- E
-            nco_counter_rl <= 8 - 3;
+            nco_counter_rl <= std_logic_vector(to_unsigned(16 - 3 ,6));
         when others =>      -- OTHERS
-            nco_counter_rl <= 8;
+            nco_counter_rl <= std_logic_vector(to_unsigned(8 ,6));
     end case ;
 end process;
+
 
 ----------------------------------------------------------------------------------------
 ----------------------------------------------------------------------------------------
