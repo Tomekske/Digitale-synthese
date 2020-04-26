@@ -58,7 +58,7 @@ tb : PROCESS
     begin
         reset <= stimvect(1);
         sdi_spread <= stimvect(0);
-        wait for period;
+        -- wait for period;
     end tbvector;
     BEGIN
     
@@ -75,9 +75,9 @@ tb : PROCESS
 
       for i in 0 to 10 loop   
             tbvector("00");       
-            wait for 13 * period;    
+            wait for 14 * period;    
             tbvector("01");       
-            wait for 13 * period;
+            wait for 14 * period;
       end loop ; 
 
       for i in 0 to 10 loop   

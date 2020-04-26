@@ -101,7 +101,7 @@ end process;
 -- SEGMENT SEMAPHORE [SS]
 process(clk,reset) begin
     if(reset = '1') then
-        sema <= "00100";
+        sema <= "00000";
         sema_mode <= '0';
     else
         if(rising_edge(clk))then
@@ -120,7 +120,7 @@ process(sema_mode,seg_mode) begin
     if(sema_mode = '1')then
         sema_next <= seg_mode_next;
     else
-        sema_next <= "00100";
+        sema_next <= sema_next;
     end if;
 end process;
 
@@ -129,7 +129,7 @@ end process;
 -- NCO [NCO]
 process(reset,clk) begin
     if(reset = '1') then
-        nco_counter <= (OTHERS => '0');
+        nco_counter <= std_logic_vector(to_unsigned(8 ,6));
     else
         if(rising_edge(clk)) then
             nco_counter <= nco_counter_next;
@@ -137,11 +137,11 @@ process(reset,clk) begin
     end if;
 end process;
 
-process(reset,nco_counter,nco_counter_rl) begin
+process(reset,nco_counter,nco_counter_rl,sema_next) begin
     --Reload counter controller
     if(reset = '1')then
         chip_0_signal <= '0';
-        nco_counter_next <= nco_counter_rl;
+        nco_counter_next <= std_logic_vector(to_unsigned(8 ,6));
     elsif(nco_counter = 0) then
         nco_counter_next <= nco_counter_rl;
         chip_0_signal <= '1';
@@ -149,8 +149,9 @@ process(reset,nco_counter,nco_counter_rl) begin
         nco_counter_next <= nco_counter - 1;
         chip_0_signal <= '0';
     end if;
+
     --Sema Reload value decoder
-    case(sema) is
+    case(sema_next) is
         when "00001" =>     -- A
             nco_counter_rl <=  std_logic_vector(to_unsigned(16 + 3 ,6));
         when "00010" =>     -- B
@@ -162,8 +163,8 @@ process(reset,nco_counter,nco_counter_rl) begin
         when "10000" =>     -- E
             nco_counter_rl <= std_logic_vector(to_unsigned(16 - 3 ,6));
         when others =>      -- OTHERS
-            nco_counter_rl <= std_logic_vector(to_unsigned(8 ,6));
-    end case ;
+            nco_counter_rl <= std_logic_vector(to_unsigned(16 ,6));
+    end case;
 end process;
 
 
