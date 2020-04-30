@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="CORRELATOR_tb_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="CORRELATOR_tb" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="0fs"></ZoomStartTime>
+      <ZoomEndTime time="28450000fs"></ZoomEndTime>
+      <Cursor1Time time="28450000fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="140"></NameColumnWidth>
+      <ValueColumnWidth column_width="95"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="10" />
+   <wvobject fp_name="/CORRELATOR_tb/end_of_sim" type="other">
+      <obj_property name="ElementShortName">end_of_sim</obj_property>
+      <obj_property name="ObjectShortName">end_of_sim</obj_property>
+   </wvobject>
+   <wvobject fp_name="/CORRELATOR_tb/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/CORRELATOR_tb/reset" type="logic">
+      <obj_property name="ElementShortName">reset</obj_property>
+      <obj_property name="ObjectShortName">reset</obj_property>
+   </wvobject>
+   <wvobject fp_name="/CORRELATOR_tb/chip_sample" type="logic">
+      <obj_property name="ElementShortName">chip_sample</obj_property>
+      <obj_property name="ObjectShortName">chip_sample</obj_property>
+   </wvobject>
+   <wvobject fp_name="/CORRELATOR_tb/sdi_despread" type="logic">
+      <obj_property name="ElementShortName">sdi_despread</obj_property>
+      <obj_property name="ObjectShortName">sdi_despread</obj_property>
+   </wvobject>
+   <wvobject fp_name="/CORRELATOR_tb/bit_sample" type="logic">
+      <obj_property name="ElementShortName">bit_sample</obj_property>
+      <obj_property name="ObjectShortName">bit_sample</obj_property>
+   </wvobject>
+   <wvobject fp_name="/CORRELATOR_tb/databit" type="logic">
+      <obj_property name="ElementShortName">databit</obj_property>
+      <obj_property name="ObjectShortName">databit</obj_property>
+      <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/CORRELATOR_tb/uut/count_pres" type="array">
+      <obj_property name="ElementShortName">count_pres[5:0]</obj_property>
+      <obj_property name="ObjectShortName">count_pres[5:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+   </wvobject>
+   <wvobject fp_name="/CORRELATOR_tb/period" type="other">
+      <obj_property name="ElementShortName">period</obj_property>
+      <obj_property name="ObjectShortName">period</obj_property>
+   </wvobject>
+   <wvobject fp_name="/CORRELATOR_tb/delay" type="other">
+      <obj_property name="ElementShortName">delay</obj_property>
+      <obj_property name="ObjectShortName">delay</obj_property>
+   </wvobject>
+</wave_config>
