@@ -2,17 +2,161 @@
 # Vivado v2019.2 (64-bit)
 # SW Build 2708876 on Wed Nov  6 21:40:23 MST 2019
 # IP Build 2700528 on Thu Nov  7 00:09:20 MST 2019
-# Start of session at: Mon Apr 20 15:09:37 2020
-# Process ID: 17020
+# Start of session at: Sat Apr 25 14:51:02 2020
+# Process ID: 29060
 # Current directory: C:/Users/Jordy/KU/Digitale-synthese
-# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent17840 C:\Users\Jordy\KU\Digitale-synthese\Digitale-synthese.xpr
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent28760 C:\Users\Jordy\KU\Digitale-synthese\Digitale-synthese.xpr
 # Log file: C:/Users/Jordy/KU/Digitale-synthese/vivado.log
 # Journal file: C:/Users/Jordy/KU/Digitale-synthese\vivado.jou
 #-----------------------------------------------------------
 start_gui
 open_project C:/Users/Jordy/KU/Digitale-synthese/Digitale-synthese.xpr
 update_compile_order -fileset sources_1
+add_files -norecurse C:/Users/Jordy/KU/Digitale-synthese/Sources/sources_1/new/DPLL.vhd
+update_compile_order -fileset sources_1
+set_property SOURCE_SET sources_1 [get_filesets sim_1]
+add_files -fileset sim_1 -norecurse C:/Users/Jordy/KU/Digitale-synthese/Sources/sim_1/new/TB_DPLL.vhd
+update_compile_order -fileset sim_1
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top TB_DPLL [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode All [current_project]
+update_compile_order -fileset sim_1
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top DPLL [current_fileset]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode All [current_project]
+update_compile_order -fileset sources_1
 launch_simulation
-source TRANSMITTER_tb.tcl
+launch_simulation
+launch_simulation
+source TB_DPLL.tcl
+run all
+current_wave_config {Untitled 1}
+add_wave {{/TB_DPLL/uut/extb}} 
+run all
+relaunch_sim
+run all
+add_bp {C:/Users/Jordy/KU/Digitale-synthese/Sources/sources_1/new/DPLL.vhd} 103
+remove_bps -file {C:/Users/Jordy/KU/Digitale-synthese/Sources/sources_1/new/DPLL.vhd} -line 103
+run all
+relaunch_sim
+run all
+close_sim
+launch_simulation
+source TB_DPLL.tcl
+run all
+close_sim
+launch_simulation
+source TB_DPLL.tcl
+relaunch_sim
+run all
+current_wave_config {Untitled 3}
+add_wave {{/TB_DPLL/uut/seg_mode}} 
+current_wave_config {Untitled 3}
+add_wave {{/TB_DPLL/uut/sema}} 
+current_wave_config {Untitled 3}
+add_wave {{/TB_DPLL/uut/td_dff}} 
+current_wave_config {Untitled 3}
+add_wave {{/TB_DPLL/uut/extb}} 
+current_wave_config {Untitled 3}
+add_wave {{/TB_DPLL/uut/sdi_sampled}} 
+current_wave_config {Untitled 3}
+add_wave {{/TB_DPLL/uut/tsd_counter}} 
+current_wave_config {Untitled 3}
+add_wave {{/TB_DPLL/uut/tsd_counter_next}} 
+current_wave_config {Untitled 3}
+add_wave {{/TB_DPLL/uut/seg_mode_next}} 
+current_wave_config {Untitled 3}
+add_wave {{/TB_DPLL/uut/sema_next}} 
+current_wave_config {Untitled 3}
+add_wave {{/TB_DPLL/uut/nco_counter}} 
+current_wave_config {Untitled 3}
+add_wave {{/TB_DPLL/uut/nco_counter_next}} 
+current_wave_config {Untitled 3}
+add_wave {{/TB_DPLL/uut/nco_counter_rl}} 
+relaunch_sim
+run all
+close_sim
+launch_simulation
+source TB_DPLL.tcl
+run all
+current_wave_config {Untitled 4}
+add_wave {{/TB_DPLL/uut/extb}} 
+current_wave_config {Untitled 4}
+add_wave {{/TB_DPLL/uut/sema}} 
+current_wave_config {Untitled 4}
+add_wave {{/TB_DPLL/uut/tsd_counter}} 
+relaunch_sim
+run all
+current_wave_config {Untitled 4}
+add_wave {{/TB_DPLL/uut/seg_mode}} 
+relaunch_sim
+run all
+relaunch_sim
+run all
+relaunch_sim
+run all
+current_wave_config {Untitled 4}
+add_wave {{/TB_DPLL/uut/sema_mode}} 
+relaunch_sim
+run all
+relaunch_sim
+run all
+relaunch_sim
+run all
+relaunch_sim
+run all
+relaunch_sim
+run all
+relaunch_sim
+run all
+relaunch_sim
+run all
+relaunch_sim
+run all
+current_wave_config {Untitled 4}
+add_wave {{/TB_DPLL/uut/nco_counter}} 
+current_wave_config {Untitled 4}
+add_wave {{/TB_DPLL/uut/nco_counter_rl}} 
+current_wave_config {Untitled 4}
+add_wave {{/TB_DPLL/uut/nco_counter_next}} 
+relaunch_sim
+run all
+relaunch_sim
+run all
+relaunch_sim
+run all
+relaunch_sim
+relaunch_sim
+export_ip_user_files -of_objects  [get_files C:/Users/Jordy/KU/Digitale-synthese/Sources/sources_1/new/DPLL.vhd] -no_script -reset -force -quiet
+remove_files  C:/Users/Jordy/KU/Digitale-synthese/Sources/sources_1/new/DPLL.vhd
+update_compile_order -fileset sources_1
+add_files -norecurse C:/Users/Jordy/KU/Digitale-synthese/Sources/sources_1/new/DPLL.vhd
+update_compile_order -fileset sources_1
+close_sim
+launch_simulation
+launch_simulation
+source TB_DPLL.tcl
+run all
+current_wave_config {Untitled 5}
+add_wave {{/TB_DPLL/uut/extb}} 
+current_wave_config {Untitled 5}
+add_wave {{/TB_DPLL/uut/tsd_counter}} 
+current_wave_config {Untitled 5}
+add_wave {{/TB_DPLL/uut/seg_mode_next}} 
+current_wave_config {Untitled 5}
+add_wave {{/TB_DPLL/uut/sema_mode}} 
+current_wave_config {Untitled 5}
+add_wave {{/TB_DPLL/uut/seg_mode}} 
+current_wave_config {Untitled 5}
+add_wave {{/TB_DPLL/uut/seg_mode}} 
+relaunch_sim
+run all
+relaunch_sim
+relaunch_sim
 run all
 close_sim
