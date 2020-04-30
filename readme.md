@@ -21,19 +21,19 @@
 
 ### Module List (RECEIVER)
 
-| Layer   | Module                        | Dev             | State        |
-| ------- | ----------------------------- | --------------- | -------------|
-| APL     | DATALATCH                     | Tomek           | :free:       |
-| APL     | **APPLICATIONLAYER**          | T/J             | :free:       |
-| DLL     | DATASHIFTREG	          | Jordy           | :free:       |
-| DLL     | **DATALINKLAYER**             | T/J             | :free:       |
-| ACL     | DPLL                          | Jordy           | :free:       |
-| ACL     | MATCHEDFILTER	          | Tomek           | :free:       |
-| ACL     | PNGENERATOR(TX)               | NA              | :x:          |
-| ACL     | DESPREADING			  | Jordy           | :free:       |
-| ACL     | CORRELATOR		          | Tomek           | :white_check_mark:       |
-| ACL     | **ACCESLAYER**                | T/J             | :free:       |
-| RX      | **RECEIVER**                  | T/J             | :free:       |
+| Layer   | Module                        | Dev             | State       	 |
+| ------- | ----------------------------- | --------------- | -------------------|
+| APL     | DATALATCH                     | Tomek           | :free:      	 |
+| APL     | **APPLICATIONLAYER**          | T/J             | :free:      	 |
+| DLL     | DATASHIFTREG	          | Jordy           | :free:      	 |
+| DLL     | **DATALINKLAYER**             | T/J             | :free:       	 |
+| ACL     | DPLL                          | Jordy           | :white_check_mark: |
+| ACL     | MATCHEDFILTER	          | Tomek           | :free:      	 |
+| ACL     | PNGENERATOR(TX)               | NA              | :x:         	 |
+| ACL     | DESPREADING			  | Jordy           | :free:       	 |
+| ACL     | CORRELATOR		          | Tomek           | :white_check_mark: |
+| ACL     | **ACCESLAYER**                | T/J             | :free:       	 |
+| RX      | **RECEIVER**                  | T/J             | :free:       	 |
 
 ## Documentation:
 
