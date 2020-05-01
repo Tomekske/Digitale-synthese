@@ -28,9 +28,10 @@
 | DLL     | DATASHIFTREG	          | Jordy           | :free:      	 |
 | DLL     | **DATALINKLAYER**             | T/J             | :free:       	 |
 | ACL     | DPLL                          | Jordy           | :white_check_mark: |
+| ACL     | DPLL2.0                       | Jordy           | :white_check_mark: |
 | ACL     | MATCHEDFILTER	          | Tomek           | :free:      	 |
 | ACL     | PNGENERATOR(TX)               | NA              | :x:         	 |
-| ACL     | DESPREADING			  | Jordy           | :free:       	 |
+| ACL     | DESPREADING			  | Jordy           | :white_check_mark: |
 | ACL     | CORRELATOR		          | Tomek           | :white_check_mark: |
 | ACL     | **ACCESLAYER**                | T/J             | :free:       	 |
 | RX      | **RECEIVER**                  | T/J             | :free:       	 |
