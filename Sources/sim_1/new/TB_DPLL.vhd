@@ -8,7 +8,7 @@ end TB_DPLL;
 
 architecture structural of TB_DPLL is 
 -- Component Declaration
-component DPLL
+component DPLL2
     port ( 
         clk         : IN STD_LOGIC;     -- Clk signal
         reset       : IN STD_LOGIC;     -- Reset signal
@@ -19,7 +19,7 @@ component DPLL
     );
 end component;
 
-for uut : DPLL use entity work.DPLL(Behavioral);
+for uut : DPLL2 use entity work.DPLL2(Behavioral);
 
 constant period     : time := 100 ns;
 constant delay      : time :=  10 ns;
@@ -34,7 +34,7 @@ SIGNAL chip_2      : STD_LOGIC;
 
 BEGIN
 
-uut: DPLL
+uut: DPLL2
     PORT MAP(clk, reset, sdi_spread, chip_0, chip_1, chip_2);
 
 clock : process
@@ -75,9 +75,16 @@ tb : PROCESS
 
       for i in 0 to 10 loop   
             tbvector("00");       
-            wait for 14 * period;    
+            wait for 15 * period;    
             tbvector("01");       
-            wait for 14 * period;
+            wait for 15 * period;
+      end loop ;
+      
+      for i in 0 to 10 loop   
+            tbvector("00");       
+            wait for 17 * period;    
+            tbvector("01");       
+            wait for 17 * period;
       end loop ; 
 
       for i in 0 to 10 loop   

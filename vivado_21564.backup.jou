@@ -1,0 +1,20 @@
+#-----------------------------------------------------------
+# Vivado v2019.2 (64-bit)
+# SW Build 2708876 on Wed Nov  6 21:40:23 MST 2019
+# IP Build 2700528 on Thu Nov  7 00:09:20 MST 2019
+# Start of session at: Fri May  1 13:25:46 2020
+# Process ID: 21564
+# Current directory: D:/Programs/Developing/Digitale-synthese
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent34268 D:\Programs\Developing\Digitale-synthese\Digitale-synthese.xpr
+# Log file: D:/Programs/Developing/Digitale-synthese/vivado.log
+# Journal file: D:/Programs/Developing/Digitale-synthese\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project D:/Programs/Developing/Digitale-synthese/Digitale-synthese.xpr
+add_files {D:/Programs/Developing/Digitale-synthese/Sources/sources_1/new/DATAREGISTER.vhd D:/Programs/Developing/Digitale-synthese/Sources/sim_1/new/TB_EDGEDETECT_STATE.vhd D:/Programs/Developing/Digitale-synthese/Sources/sim_1/new/TB_DPLL.vhd D:/Programs/Developing/Digitale-synthese/Sources/sources_1/new/UPDOWNCOUNTER.vhd D:/Programs/Developing/Digitale-synthese/Sources/sources_1/new/EDGEDETECT_STATE.vhd D:/Programs/Developing/Digitale-synthese/Sources/sim_1/new/TB_DATAREGISTER.vhd D:/Programs/Developing/Digitale-synthese/Sources/sources_1/new/SEG7DEC.vhd D:/Programs/Developing/Digitale-synthese/Sources/sources_1/new/EDGEDETECT.vhd D:/Programs/Developing/Digitale-synthese/Sources/sources_1/new/PNGENERATOR.vhd D:/Programs/Developing/Digitale-synthese/Sources/sim_1/new/TB_TRANSMITTER.vhd D:/Programs/Developing/Digitale-synthese/Sources/sources_1/new/APPLICATION_LAYER.vhd D:/Programs/Developing/Digitale-synthese/Sources/sim_1/new/TB_APPLICATION_LAYER.vhd D:/Programs/Developing/Digitale-synthese/Sources/sources_1/new/DATALINK_LAYER.vhd D:/Programs/Developing/Digitale-synthese/Sources/sources_1/new/DEBOUNCER.vhd D:/Programs/Developing/Digitale-synthese/Sources/sim_1/new/TB_UPDOWNCOUNTER.vhd D:/Programs/Developing/Digitale-synthese/Sources/sources_1/new/CORRELATOR.vhd D:/Programs/Developing/Digitale-synthese/Sources/sources_1/new/SEQUENCECONTROLLER.vhd D:/Programs/Developing/Digitale-synthese/Sources/sources_1/new/DPLL.vhd D:/Programs/Developing/Digitale-synthese/Sources/sources_1/new/TRANSMITTER.vhd D:/Programs/Developing/Digitale-synthese/Sources/sim_1/new/TB_PNGENERATOR.vhd D:/Programs/Developing/Digitale-synthese/Sources/sources_1/new/ACCES_LAYER.vhd D:/Programs/Developing/Digitale-synthese/Sources/sim_1/new/TB_SEQUENCECOUNTER.vhd D:/Programs/Developing/Digitale-synthese/Sources/sim_1/new/TB_ACCES_LAYER.vhd D:/Programs/Developing/Digitale-synthese/Sources/sim_1/new/TB_DATALINK_LAYER.vhd D:/Programs/Developing/Digitale-synthese/Sources/sim_1/new/TB_CORRELATOR.vhd D:/Programs/Developing/Digitale-synthese/Sources/sim_1/new/TB_SEG7DEC.vhd D:/Programs/Developing/Digitale-synthese/Sources/sim_1/new/TB_DEBOUNCER.vhd D:/Programs/Developing/Digitale-synthese/Sources/sim_1/new/TB_EDGEDETECT.vhd}
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+launch_simulation
+source ACCES_LAYER_tb.tcl
+run all
+close_sim
