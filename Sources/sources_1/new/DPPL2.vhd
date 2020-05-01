@@ -35,19 +35,21 @@ SIGNAL nco_zero         : STD_LOGIC;
 SIGNAL od_chip0         : STD_LOGIC;
 SIGNAL od_chip1         : STD_LOGIC;
 SIGNAL od_chip2         : STD_LOGIC;
+
+begin
 ----------------------------------------------------------------------------------------
 ----------------------------------------------------------------------------------------
 -- TRANSITION DETECTION [TD]
 -- D-FLIPFLOP for rising and falling edge detection (transistion detection)
 process(reset, clk)begin    -- SYNC D-FLIPFLOP
     if(reset = '1')then     -- ASYNC RESET
-        extb <= '0';
+        td_extb <= '0';
     else
         if(rising_edge(clk))then    -- When clk 
             if((sdi_spread XOR td_sdi_delay) = '1')then -- If input is diff from delayed signal
-                extb <= '1'; -- Transistion detected
+                td_extb <= '1'; -- Transistion detected
             else
-                extb <= '0'; -- No transistion
+                td_extb <= '0'; -- No transistion
             end if;
             td_sdi_delay <= sdi_spread; -- D-FLIPFLOP for input signal
         end if;
@@ -62,18 +64,23 @@ process(reset,clk)begin
         tsd_counter <= (OTHERS => '0');
     else 
         if(rising_edge(clk))then
-            tsd_counter <= tsd_counter_next;
+            if((sdi_spread XOR td_sdi_delay) = '1')then
+                tsd_counter <= (OTHERS => '0');
+            else
+                tsd_counter <= tsd_counter_next;
+            end if;
         end if;
     end if;
 end process;
 
-process(tsd_counter, tsd_counter_next)begin
+process(td_extb, tsd_counter, tsd_counter_next,sdi_spread,td_sdi_delay)begin
     -- COUNTER component : counts 0 to 15 with overflow to reload automatic.
-    if(extb = '1')then      -- LOAD SIGNAL TO RESET THE COUNTER (load with zero's)
-        tsd_counter_next <= (OTHERS => '0');
-    else                    -- Next state is increment of current state
+--    if(td_extb = '1')then      -- LOAD SIGNAL TO RESET THE COUNTER (load with zero's)
+--        tsd_counter_next <= (OTHERS => '0');
+--    else                    -- Next state is increment of current state
         tsd_counter_next <= tsd_counter + 1;
-    end if;
+--    end if;
+
     -- DECODER component
     if(tsd_counter >= 11) then
         tsd_segmode <= "10000";
@@ -98,9 +105,9 @@ process(reset, clk)begin
         ss_semacode_prev <= (OTHERS => '0');
     else
         if(rising_edge(clk))then
-            if(extb = '1')then      -- SRFF
+            if(td_extb = '1')then      -- SRFF
                 ss_semamode <= '1';  -- SET
-            elsif()then
+            elsif(nco_zero = '1')then
                 ss_semamode <= '0';  -- RESET
             end if;
             ss_semacode_prev <= ss_semacode;
@@ -108,7 +115,7 @@ process(reset, clk)begin
     end if;
 end process;
 
-process(ss_semamode)begin
+process(ss_semamode, tsd_segmode)begin
     if(ss_semamode = '1')then       -- 2MUX1 WITH
         ss_semacode <= tsd_segmode; 
     else
@@ -127,7 +134,7 @@ process(reset, clk)begin
     else
         if(rising_edge(clk))then
             nco_counter <= nco_counter_next;        -- Load next state of counter
-            if(nco_counter_next = (OTHERS => '0'))then  -- if next state of the counter is zero activate output signal to indicate zero
+            if(nco_counter_next = 0)then  -- if next state of the counter is zero activate output signal to indicate zero
                 nco_zero <= '1';
             else 
                 nco_zero <= '0';    -- else not zero disable output (output to zero)
@@ -136,9 +143,9 @@ process(reset, clk)begin
     end if;
 end process;
 
-process(ss_semacode, nco_counter)begin
+process(ss_semacode,ss_semacode_prev, nco_counter, nco_counter_rl)begin
 
-    if(nco_counter = (OTHERS => '0'))then
+    if(nco_counter = 0)then
         nco_counter_next <= nco_counter_rl;     -- When counter is zero reload the counter
     else
         nco_counter_next <= nco_counter - 1;    -- Else next state is one less
@@ -146,17 +153,17 @@ process(ss_semacode, nco_counter)begin
     -- sema decoder for reload values.
     case(ss_semacode) is
         when "00001" =>     -- A
-            nco_counter_rl <=  STD_LOGIC_VECTOR(TO_UNSIGNED(16 + 3 ,6));
+            nco_counter_rl <=  STD_LOGIC_VECTOR(TO_UNSIGNED(15 + 4 ,6));
         when "00010" =>     -- B
-            nco_counter_rl <= STD_LOGIC_VECTOR(TO_UNSIGNED(16 + 1 ,6));
+            nco_counter_rl <= STD_LOGIC_VECTOR(TO_UNSIGNED(15 + 2 ,6));
         when "00100" =>     -- C
-            nco_counter_rl <= STD_LOGIC_VECTOR(TO_UNSIGNED(16 ,6));
+            nco_counter_rl <= STD_LOGIC_VECTOR(TO_UNSIGNED(15 ,6));
         when "01000" =>     -- D
-            nco_counter_rl <= STD_LOGIC_VECTOR(TO_UNSIGNED(16 - 1 ,6));
+            nco_counter_rl <= STD_LOGIC_VECTOR(TO_UNSIGNED(15 - 2 ,6));
         when "10000" =>     -- E
-            nco_counter_rl <= STD_LOGIC_VECTOR(TO_UNSIGNED(16 - 3 ,6));
+            nco_counter_rl <= STD_LOGIC_VECTOR(TO_UNSIGNED(15 - 4 ,6));
         when others =>      -- OTHERS
-            nco_counter_rl <= STD_LOGIC_VECTOR(TO_UNSIGNED(16 ,6));
+            nco_counter_rl <= STD_LOGIC_VECTOR(TO_UNSIGNED(15 ,6));
     end case;
 end process;
 ----------------------------------------------------------------------------------------
