@@ -30,11 +30,11 @@ architecture Behavioral of CORRELATOR is
 begin
 
 -- SYNC COMPONENT
-process(reset,clk) begin
+process(reset, clk) begin
     -- Async reset:
     if(reset = '1') then
         databit <= '0';
-        count_pres  <= treshold;
+        count_pres <= treshold;
     else
         if (rising_edge(clk)) then
             -- Het reseten van de count_pres naar de treshold waarde '32'
