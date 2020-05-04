@@ -1,5 +1,5 @@
--- JORDY DE HOON
--- MODULE : TB_UPDOWNCOUNTER
+-- Tomek Joostens
+-- MODULE : TB_CORRELATOR
 library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
