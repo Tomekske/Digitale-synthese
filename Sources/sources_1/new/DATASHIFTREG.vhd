@@ -29,8 +29,8 @@ process(clk,reset)begin
     if(reset = '1')then
         data_pres <= (OTHERS => '0');   -- Set all bits to zero
     else
-        if(rising_edge(clk))then        -- When rising edge on clk signal
-            if(sh = '1')then            -- And shift signal is high
+        if(rising_edge(clk))then            -- When rising edge on clk signal
+            if(sh = '1')then                -- And shift signal is high
                 data_pres <= data_next;     -- load new pressent state in register
             end if;
         end if;
