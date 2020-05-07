@@ -9,7 +9,7 @@ use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 use ieee.std_logic_unsigned.all;
 
-entity "MODULE NAME HERE" is
+entity MODULE_NAME_HERE is
     port( 
             
     );

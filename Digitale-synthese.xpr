@@ -3,7 +3,7 @@
 <!--                                                         -->
 <!-- Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.   -->
 
-<Project Version="7" Minor="44" Path="C:/Users/Jordy/KU/Digitale-synthese/Digitale-synthese.xpr">
+<Project Version="7" Minor="44" Path="C:/Users/Jordy/git/Digitale-synthese/Digitale-synthese.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
     <Option Name="Id" Val="fde1f4e9460745bda9e505759396eb54"/>
@@ -31,9 +31,13 @@
     <Option Name="IPStaticSourceDir" Val="$PIPUSERFILESDIR/ipstatic"/>
     <Option Name="EnableBDX" Val="FALSE"/>
 <<<<<<< HEAD
+    <Option Name="WTXSimLaunchSim" Val="116"/>
+=======
+<<<<<<< HEAD
     <Option Name="WTXSimLaunchSim" Val="151"/>
 =======
     <Option Name="WTXSimLaunchSim" Val="92"/>
+>>>>>>> master
 >>>>>>> master
     <Option Name="WTModelSimLaunchSim" Val="0"/>
     <Option Name="WTQuestaLaunchSim" Val="0"/>
@@ -63,7 +67,11 @@
   <FileSets Version="1" Minor="31">
     <FileSet Name="sources_1" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
       <Filter Type="Srcs"/>
+<<<<<<< HEAD
+      <File Path="$PPRDIR/Sources/sources_1/new/DATASHIFTREG.vhd">
+=======
       <File Path="$PPRDIR/Sources/sources_1/new/MATCHED_FILTER.vhd">
+>>>>>>> master
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -274,7 +282,11 @@
       </File>
       <Config>
         <Option Name="DesignMode" Val="RTL"/>
+<<<<<<< HEAD
+        <Option Name="TopModule" Val="DATASHIFTREG"/>
+=======
         <Option Name="TopModule" Val="MATCHED_FILTER"/>
+>>>>>>> master
       </Config>
     </FileSet>
     <FileSet Name="constrs_1" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
@@ -286,15 +298,23 @@
     <FileSet Name="sim_1" Type="SimulationSrcs" RelSrcDir="$PSRCDIR/sim_1">
       <Filter Type="Srcs"/>
 <<<<<<< HEAD
+      <File Path="$PPRDIR/Sources/sim_1/new/TB_DATASHIFTREG.vhd">
+=======
+<<<<<<< HEAD
       <File Path="$PPRDIR/Sources/sim_1/new/TB_MATCHED_FILTER.vhd">
+>>>>>>> master
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
+<<<<<<< HEAD
+      <File Path="$PPRDIR/waveforms/TB_DATASHIFTREG_behav.wcfg">
+=======
       <File Path="$PPRDIR/MATCHED_FILTER_tb_behav.wcfg">
 =======
       <File Path="$PPRDIR/waveforms/TB_DPLL_behav.wcfg">
+>>>>>>> master
 >>>>>>> master
         <FileInfo>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -303,9 +323,13 @@
       <Config>
         <Option Name="DesignMode" Val="RTL"/>
 <<<<<<< HEAD
+        <Option Name="TopModule" Val="TB_DATASHIFTREG"/>
+=======
+<<<<<<< HEAD
         <Option Name="TopModule" Val="MATCHED_FILTER_tb"/>
 =======
         <Option Name="TopModule" Val="TB_DPLL"/>
+>>>>>>> master
 >>>>>>> master
         <Option Name="TopLib" Val="xil_defaultlib"/>
         <Option Name="TransportPathDelay" Val="0"/>
@@ -316,6 +340,10 @@
         <Option Name="XSimWcfgFile" Val="$PPRDIR/MATCHED_FILTER_tb_behav.wcfg"/>
 =======
         <Option Name="XSimWcfgFile" Val="$PPRDIR/waveforms/TB_DPLL_behav.wcfg"/>
+<<<<<<< HEAD
+        <Option Name="XSimWcfgFile" Val="$PPRDIR/waveforms/TB_DATASHIFTREG_behav.wcfg"/>
+=======
+>>>>>>> master
 >>>>>>> master
       </Config>
     </FileSet>
