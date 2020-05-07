@@ -1,5 +1,5 @@
--- JORDY DE HOON
--- MODULE : TB_UPDOWNCOUNTER
+-- Tomek Joostens
+-- MODULE : TB_CORRELATOR
 library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
@@ -79,7 +79,6 @@ procedure tbvector(constant stimvect : in std_logic_vector(3 downto 0))is
         
         -- Test: 1
         -- databit moet '1' zijn
-
         for i in 0 to 64 loop
             tbvector("0110"); 
             tbvector("0010"); 
@@ -96,18 +95,6 @@ procedure tbvector(constant stimvect : in std_logic_vector(3 downto 0))is
          tbvector("0001");
          tbvector("0000");
          wait for 10*period;        
-        -- Test: 2
-        -- databit moet '1' zijn
---        for i in 0 to 7 loop
---            tbvector("0110"); 
---            wait for 4*period;  
---        end loop;
---        for i in 0 to 6 loop
---            tbvector("0100"); 
---            wait for 4*period;  
---        end loop;
---         tbvector("0111"); 
---        wait for 4*period;  
     end_of_sim <= true;
     wait;
     END PROCESS;
