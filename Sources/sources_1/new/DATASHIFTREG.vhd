@@ -37,12 +37,12 @@ process(clk,reset)begin
     end if;
 end process;
 -- COMB COMPONENT HERE
-process(data_pres)begin
+process(data_pres,sdi,clk)begin
     -- Left shift next state decoder
-    data_next(SHIFT_WIDTH - 1 DOWNTO 1) <= data_pres (SHIFT_WIDTH - 2 DOWNTO 0);
+    data_next((SHIFT_WIDTH - 1) DOWNTO 1) <= data_pres((SHIFT_WIDTH - 2) DOWNTO 0);
     -- LSB bit is sdi (serial data input)
     data_next(0) <= sdi;
-end 
+end process;
 -- LINKING SIGNALS HERE
 pdo <= data_pres;   -- Bind data_pres buffer to output
 end Behavioral;

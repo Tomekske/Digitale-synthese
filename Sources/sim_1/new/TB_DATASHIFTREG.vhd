@@ -32,16 +32,16 @@ CONSTANT period     :   time := 100 ns;
 CONSTANT delay      :   time :=  10 ns;
 SIGNAL end_of_sim   :   boolean := false;
 
-SIGNAL reset       : IN STD_LOGIC;     -- ASYNC RESET
-SIGNAL clk         : IN STD_LOGIC;     -- CLK
-SIGNAL sdi         : IN STD_LOGIC;     -- Serial data in
-SIGNAL sh          : IN STD_LOGIC;     -- shift signal
-SIGNAL pdo         : OUT STD_LOGIC_VECTOR(SHIFT_WIDTH - 1 DOWNTO 0);    -- Parrallel data out
+SIGNAL reset       : STD_LOGIC;     -- ASYNC RESET
+SIGNAL clk         : STD_LOGIC;     -- CLK
+SIGNAL sdi         : STD_LOGIC;     -- Serial data in
+SIGNAL sh          : STD_LOGIC;     -- shift signal
+SIGNAL pdo         : STD_LOGIC_VECTOR(SHIFT_WIDTH - 1 DOWNTO 0);    -- Parrallel data out
 BEGIN
 
 uut: DATASHIFTREG
     generic map(SHIFT_WIDTH => SHIFT_WIDTH)
-    PORT MAP(clk, reset, sdi, sh, pdo);
+    PORT MAP(reset, clk, sdi, sh, pdo);
 
 clock : process
     begin 
