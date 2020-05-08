@@ -1,43 +1,40 @@
-----------------------------------------------------------------------------------
--- Company: 
--- Engineer: 
--- 
--- Create Date: 05/07/2020 05:00:00 PM
--- Design Name: 
--- Module Name: DATA_LATCH - Behavioral
--- Project Name: 
--- Target Devices: 
--- Tool Versions: 
--- Description: 
--- 
--- Dependencies: 
--- 
--- Revision:
--- Revision 0.01 - File Created
--- Additional Comments:
--- 
-----------------------------------------------------------------------------------
-
+-- TOMEK JOOSTENS
+-- MODULE : DATA_LATCH
 
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 
--- Uncomment the following library declaration if using
--- arithmetic functions with Signed or Unsigned values
---use IEEE.NUMERIC_STD.ALL;
-
--- Uncomment the following library declaration if instantiating
--- any Xilinx leaf cells in this code.
---library UNISIM;
---use UNISIM.VComponents.all;
-
 entity DATA_LATCH is
---  Port ( );
+    Port ( 
+        clk         : IN STD_LOGIC;
+        reset       : IN STD_LOGIC;     -- Reset signal
+        bit_sample  : IN STD_LOGIC;
+        preamble    : IN STD_LOGIC_VECTOR(6 downto 0);
+        data_in     : IN STD_LOGIC_VECTOR(3 downto 0);
+        data_out    : OUT STD_LOGIC_VECTOR(3 downto 0)
+    );
 end DATA_LATCH;
 
 architecture Behavioral of DATA_LATCH is
+CONSTANT preamble_ptrn	: std_logic_vector(6 downto 0) := "0111110";
+
+SIGNAL data_dff   : STD_LOGIC_VECTOR(3 DOWNTO 0);
 
 begin
 
+-- SYNCHROON
+process(reset, clk) begin
+    if(reset = '1') then
+        data_dff <= (others => '0');
+    else
+        if(rising_edge(clk)) then
+            if((bit_sample = '1') and (preamble = preamble_ptrn)) then
+                data_dff <= data_in;
+            end if;
+         end if;
+    end if;
+end process;
 
+-- Signaal aan uitgang koppelen
+data_out <= data_dff;
 end Behavioral;
