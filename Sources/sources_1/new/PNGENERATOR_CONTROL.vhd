@@ -1,9 +1,12 @@
--- JORDY DE HOON
--- MODULE : PNGENERATOR
-
+---------------------------------------------------------------------------
+-- DEV		: JORDY DE HOON
+-- ACADEMIC : KULEUVEN 2019-2020 CAMPUS DE NAYER
+-- MODULE	: PNGENERATOR_CONTROL
+-- INFO		: UPDATE OF THE PNGENERATOR WITH FLOW CONTROL AND CLEAR SIGNAL
+---------------------------------------------------------------------------
 library ieee;
 use ieee.std_logic_1164.all;
-entity PNGENERATOR is
+entity PNGENERATOR_CONTROL is
     port ( 
         clk         :   IN  STD_LOGIC;      -- Clock signal
         reset       :   IN  STD_LOGIC;      -- Active high reset
@@ -15,9 +18,9 @@ entity PNGENERATOR is
         pn_sig1     :   OUT STD_LOGIC;      -- second pn code signal
         pn_sig2     :   OUT STD_LOGIC       -- third pn code signal
     );
-    end PNGENERATOR;
+    end PNGENERATOR_CONTROL;
 
-architecture Behavioral OF PNGENERATOR IS   
+architecture Behavioral OF PNGENERATOR_CONTROL IS   
     CONSTANT PNCODE1NCO     :  STD_LOGIC_VECTOR(4 DOWNTO 0) := "00001";   -- Internal constant code for full_seq dectection
     CONSTANT PNCODE1        :  STD_LOGIC_VECTOR(4 DOWNTO 0) := "00010";   -- Internal constant code for the first pn code
     CONSTANT PNCODE2        :  STD_LOGIC_VECTOR(4 DOWNTO 0) := "00111";   -- Internal constant code for the second pn code
