@@ -16,7 +16,7 @@ entity APPLICATION_LAYER_RX is
         bit_sample  : IN  STD_LOGIC;
         preamble    : IN  STD_LOGIC_VECTOR(6 DOWNTO 0);
         data        : IN  STD_LOGIC_VECTOR(3 DOWNTO 0);
-        7seg        : OUT STD_LOGIC_VECTOR(6 DOWNTO 0)
+        seg7        : OUT STD_LOGIC_VECTOR(6 DOWNTO 0)
     );
 end APPLICATION_LAYER_RX;
 
@@ -48,6 +48,6 @@ DL: DATALATCH
     port map(clk, reset, bit_sample, preamble, data, DL_data_out);
 
 SEG7: SEG7DEC
-    port map(DL_data_out,7seg);
+    port map(DL_data_out,seg7);
 
 end Behavioral;

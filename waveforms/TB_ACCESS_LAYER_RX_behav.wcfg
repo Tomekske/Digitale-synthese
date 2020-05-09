@@ -11,12 +11,12 @@
    </db_ref_list>
    <zoom_setting>
       <ZoomStartTime time="0fs"></ZoomStartTime>
-      <ZoomEndTime time="129756610fs"></ZoomEndTime>
-      <Cursor1Time time="2100000fs"></Cursor1Time>
+      <ZoomEndTime time="103350001fs"></ZoomEndTime>
+      <Cursor1Time time="40711313fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="175"></NameColumnWidth>
-      <ValueColumnWidth column_width="82"></ValueColumnWidth>
+      <ValueColumnWidth column_width="78"></ValueColumnWidth>
    </column_width_setting>
    <WVObjectSize size="18" />
    <wvobject fp_name="/TB_ACCESS_LAYER_RX/end_of_sim" type="other">
@@ -50,10 +50,14 @@
    <wvobject fp_name="/TB_ACCESS_LAYER_RX/databit" type="logic">
       <obj_property name="ElementShortName">databit</obj_property>
       <obj_property name="ObjectShortName">databit</obj_property>
+      <obj_property name="CustomSignalColor">#0000FF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
    </wvobject>
    <wvobject fp_name="/TB_ACCESS_LAYER_RX/bitsample" type="logic">
       <obj_property name="ElementShortName">bitsample</obj_property>
       <obj_property name="ObjectShortName">bitsample</obj_property>
+      <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
    </wvobject>
    <wvobject fp_name="/TB_ACCESS_LAYER_RX/uut/DPLL/chip_0" type="logic">
       <obj_property name="ElementShortName">chip_0</obj_property>

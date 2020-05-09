@@ -65,6 +65,12 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
+      <File Path="$PPRDIR/Sources/sources_1/new/DATASHIFTREG.vhd">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
       <File Path="$PPRDIR/Sources/sources_1/new/DESPREADING.vhd">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
@@ -95,6 +101,24 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
+      <File Path="$PPRDIR/Sources/sources_1/new/RX_APPLICATION_LAYER.vhd">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PPRDIR/Sources/sources_1/new/SEG7DEC.vhd">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PPRDIR/Sources/sources_1/new/RECEIVER.vhd">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
       <File Path="$PPRDIR/Sources/sources_1/new/ACCES_LAYER.vhd">
         <FileInfo>
           <Attr Name="AutoDisabled" Val="1"/>
@@ -117,13 +141,6 @@
         </FileInfo>
       </File>
       <File Path="$PPRDIR/Sources/sources_1/new/DATAREGISTER.vhd">
-        <FileInfo>
-          <Attr Name="AutoDisabled" Val="1"/>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
-      <File Path="$PPRDIR/Sources/sources_1/new/DATASHIFTREG.vhd">
         <FileInfo>
           <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="UsedIn" Val="synthesis"/>
@@ -165,13 +182,6 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PPRDIR/Sources/sources_1/new/SEG7DEC.vhd">
-        <FileInfo>
-          <Attr Name="AutoDisabled" Val="1"/>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
       <File Path="$PPRDIR/Sources/sources_1/new/SEQUENCECONTROLLER.vhd">
         <FileInfo>
           <Attr Name="AutoDisabled" Val="1"/>
@@ -195,7 +205,7 @@
       </File>
       <Config>
         <Option Name="DesignMode" Val="RTL"/>
-        <Option Name="TopModule" Val="ACCES_LAYER_RX"/>
+        <Option Name="TopModule" Val="RECEIVER"/>
         <Option Name="TopAutoSet" Val="TRUE"/>
       </Config>
     </FileSet>
