@@ -37,7 +37,7 @@ process(clk,reset)begin
 end process;
 
 -- COMB COMP
-process(PNCODE1_pres) begin
+process(reset,PNCODE1_pres,PNCODE2_pres) begin
     PNCODE1_next(3 DOWNTO 0) <= PNCODE1_pres (4 DOWNTO 1);  -- Shift register
     PNCODE1_next(4) <= PNCODE1_pres(3) XOR PNCODE1_pres(0); -- Load bit calculation
 

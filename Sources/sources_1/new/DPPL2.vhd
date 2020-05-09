@@ -12,6 +12,7 @@ entity DPLL2 is
             clk         : IN STD_LOGIC;     -- Clk signal
             reset       : IN STD_LOGIC;     -- Reset signal
             sdi_spread  : IN STD_LOGIC;
+            extb        : OUT STD_LOGIC;
             chip_0      : OUT STD_LOGIC;
             chip_1      : OUT STD_LOGIC;
             chip_2      : OUT STD_LOGIC
@@ -184,5 +185,6 @@ od_chip0 <= nco_zero;   -- Link nco_zero to od_chip0
 chip_0 <= od_chip0;     -- link od_chip0 to chip0
 chip_1 <= od_chip1;     -- ""
 chip_2 <= od_chip2;     -- ""
+extb <= td_extb;
 
 end Behavioral;

@@ -42,7 +42,7 @@ begin
 PNGEN: PNGENERATOR 
     port map(clk, reset, pn_start, pn_0, pn_1, pn_2);
 -- 4 MUX 1 and XOR ports
-process(reset, sdo, pn_0, pn_1, pn_2) begin
+process(reset, sdo, mode, pn_0, pn_1, pn_2) begin
     if(reset='1')then
         mux_out <= '0';
     else
