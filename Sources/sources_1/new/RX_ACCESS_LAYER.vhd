@@ -86,9 +86,12 @@ component CORRELATOR is
 end component;
 -- DESPREADING
 component DESPREADING is
-    port( 
+    port(
+            clk         : IN STD_LOGIC;
+            reset       : IN STD_LOGIC; 
             signal_0    : IN STD_LOGIC;
             signal_1    : IN STD_LOGIC;
+            enable      : IN STD_LOGIC;
             signal_out  : OUT STD_LOGIC
     );
 end component;
@@ -106,7 +109,7 @@ PNGENC: PNGENERATOR_CONTROL
     port map(clk,reset,DPLL_chip1,PNGEN_clear,PNGEN_pnstart,PNGEN_fullseq,PNGEN_sig0,PNGEN_sig1,PNGEN_sig2);
 
 DESP: DESPREADING
-    port map(sdi_spread,PN_seq,sdi_despread);
+    port map(clk,reset,sdi_spread,PN_seq,DPLL_chip2,sdi_despread);
 
 CORR: CORRELATOR
     port map(clk,reset,DPLL_chip2,sdi_despread,PNGEN_fullseq,databit);

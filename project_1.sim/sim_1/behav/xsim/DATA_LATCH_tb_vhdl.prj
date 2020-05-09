@@ -1,7 +1,0 @@
-# compile vhdl design source files
-vhdl xil_defaultlib  \
-"../../../../Digitale-synthese.srcs/sources_1/new/DATA_LATCH.vhd" \
-"../../../../Digitale-synthese.srcs/sim_1/new/DATA_LATCH_tb.vhd" \
-
-# Do not sort compile order
-nosort

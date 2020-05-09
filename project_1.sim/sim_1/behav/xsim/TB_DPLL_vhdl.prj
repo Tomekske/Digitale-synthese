@@ -1,7 +1,0 @@
-# compile vhdl design source files
-vhdl xil_defaultlib  \
-"../../../../Sources/sources_1/new/DPPL2.vhd" \
-"../../../../Sources/sim_1/new/TB_DPLL.vhd" \
-
-# Do not sort compile order
-nosort
