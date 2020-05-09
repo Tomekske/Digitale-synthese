@@ -38,16 +38,17 @@ end component;
 -- 7SEGMENNT DECODER
 component SEG7DEC is
     Port( 
-        data_in  : in STD_LOGIC_VECTOR (3 downto 0); -- input data
+        data_in  : in STD_LOGIC_VECTOR(3 downto 0); -- input data
         g_to_a   : out STD_LOGIC_VECTOR (6 downto 0) -- 7 segment output: [0-9][A-F]
     ); 
 end component;
+
 begin
 
-DL: DATALATCH
-    port map(clk, reset, bit_sample, preamble, data, DL_data_out);
-
-SEG7: SEG7DEC
+SEG: SEG7DEC
     port map(DL_data_out,seg7);
+
+DL: DATA_LATCH
+    port map(clk, reset, bit_sample, preamble, data, DL_data_out);
 
 end Behavioral;

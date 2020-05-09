@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="RECEIEVER_tb_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="RECEIEVER_tb" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="0fs"></ZoomStartTime>
+      <ZoomEndTime time="12551450001fs"></ZoomEndTime>
+      <Cursor1Time time="3873100000fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="175"></NameColumnWidth>
+      <ValueColumnWidth column_width="78"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="17" />
+   <wvobject fp_name="/RECEIEVER_tb/end_of_sim" type="other">
+      <obj_property name="ElementShortName">end_of_sim</obj_property>
+      <obj_property name="ObjectShortName">end_of_sim</obj_property>
+   </wvobject>
+   <wvobject fp_name="/RECEIEVER_tb/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/RECEIEVER_tb/reset" type="logic">
+      <obj_property name="ElementShortName">reset</obj_property>
+      <obj_property name="ObjectShortName">reset</obj_property>
+   </wvobject>
+   <wvobject fp_name="/RECEIEVER_tb/sdi_spread" type="logic">
+      <obj_property name="ElementShortName">sdi_spread</obj_property>
+      <obj_property name="ObjectShortName">sdi_spread</obj_property>
+   </wvobject>
+   <wvobject fp_name="/RECEIEVER_tb/uut/ACL/sdi_spread" type="logic">
+      <obj_property name="ElementShortName">sdi_spread</obj_property>
+      <obj_property name="ObjectShortName">sdi_spread</obj_property>
+   </wvobject>
+   <wvobject fp_name="/RECEIEVER_tb/uut/ACL/sdi_despread" type="logic">
+      <obj_property name="ElementShortName">sdi_despread</obj_property>
+      <obj_property name="ObjectShortName">sdi_despread</obj_property>
+   </wvobject>
+   <wvobject fp_name="/RECEIEVER_tb/uut/ACL/DPLL_extb" type="logic">
+      <obj_property name="ElementShortName">DPLL_extb</obj_property>
+      <obj_property name="ObjectShortName">DPLL_extb</obj_property>
+   </wvobject>
+   <wvobject fp_name="/RECEIEVER_tb/uut/ACL/DPLL_chip0" type="logic">
+      <obj_property name="ElementShortName">DPLL_chip0</obj_property>
+      <obj_property name="ObjectShortName">DPLL_chip0</obj_property>
+   </wvobject>
+   <wvobject fp_name="/RECEIEVER_tb/uut/ACL/DPLL_chip1" type="logic">
+      <obj_property name="ElementShortName">DPLL_chip1</obj_property>
+      <obj_property name="ObjectShortName">DPLL_chip1</obj_property>
+   </wvobject>
+   <wvobject fp_name="/RECEIEVER_tb/uut/ACL/DPLL_chip2" type="logic">
+      <obj_property name="ElementShortName">DPLL_chip2</obj_property>
+      <obj_property name="ObjectShortName">DPLL_chip2</obj_property>
+   </wvobject>
+   <wvobject fp_name="/RECEIEVER_tb/pn_mode" type="array">
+      <obj_property name="ElementShortName">pn_mode[1:0]</obj_property>
+      <obj_property name="ObjectShortName">pn_mode[1:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/RECEIEVER_tb/uut/DLL/pdo" type="array">
+      <obj_property name="ElementShortName">pdo[10:0]</obj_property>
+      <obj_property name="ObjectShortName">pdo[10:0]</obj_property>
+      <obj_property name="Radix">BINARYRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/RECEIEVER_tb/uut/APL/preamble" type="array">
+      <obj_property name="ElementShortName">preamble[6:0]</obj_property>
+      <obj_property name="ObjectShortName">preamble[6:0]</obj_property>
+      <obj_property name="Radix">BINARYRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/RECEIEVER_tb/seg7" type="array">
+      <obj_property name="ElementShortName">seg7[6:0]</obj_property>
+      <obj_property name="ObjectShortName">seg7[6:0]</obj_property>
+      <obj_property name="Radix">BINARYRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/RECEIEVER_tb/uut/data_bit" type="logic">
+      <obj_property name="ElementShortName">data_bit</obj_property>
+      <obj_property name="ObjectShortName">data_bit</obj_property>
+   </wvobject>
+   <wvobject fp_name="/RECEIEVER_tb/uut/ACL/CORR/databit" type="logic">
+      <obj_property name="ElementShortName">databit</obj_property>
+      <obj_property name="ObjectShortName">databit</obj_property>
+   </wvobject>
+   <wvobject fp_name="/RECEIEVER_tb/uut/ACL/CORR/count_pres" type="array">
+      <obj_property name="ElementShortName">count_pres[5:0]</obj_property>
+      <obj_property name="ObjectShortName">count_pres[5:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      <obj_property name="WaveformStyle">STYLE_ANALOG</obj_property>
+      <obj_property name="CellHeight">100</obj_property>
+      <obj_property name="AnalogYRangeType">ANALOG_YRANGETYPE_FIXED</obj_property>
+      <obj_property name="AnalogYRangeMin">1.84467e+19</obj_property>
+      <obj_property name="AnalogYRRangeMax">35</obj_property>
+      <obj_property name="AnalogInterpolation">ANALOG_INTERPOLATION_HOLD</obj_property>
+      <obj_property name="AnalogOffscale">ANALOG_OFFSCALE_HIDE</obj_property>
+      <obj_property name="AnalogHorizLine">32.000000</obj_property>
+   </wvobject>
+</wave_config>

@@ -16,6 +16,7 @@ component MATCHED_FILTER
         seq_det         : OUT STD_LOGIC -- Dit is de databit die naar buiten wordt gestuurd
     );
 end component;
+
 for uut : MATCHED_FILTER use entity work.MATCHED_FILTER(Behavioral);
 constant period : time := 100 ns;
 constant delay  : time :=  10 ns;

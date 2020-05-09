@@ -26,6 +26,7 @@ SIGNAL data_bit     : STD_LOGIC;
 SIGNAL bitsample    : STD_LOGIC;
 SIGNAL preamble     : STD_LOGIC_VECTOR(6 DOWNTO 0);
 SIGNAL data         : STD_LOGIC_VECTOR(3 DOWNTO 0);
+SIGNAL data_raw     : STD_LOGIC_VECTOR(DATA_WIDTH - 1 DOWNTO 0);
 -- COMPONENTS
 component ACCES_LAYER_RX is
     port(
@@ -66,14 +67,9 @@ ACL: ACCES_LAYER_RX
 
 DLL: DATASHIFTREG
     generic map(DATA_WIDTH)
-    port map(   reset => reset,
-                clk => clk, 
-                data_bit => sdi,
-                bitsample => sh,
-                preamble => pdo(DATA_WIDTH - 1 DOWNTO 4),
-                data => pdo(3 DOWNTO 0) 
-                );
+    port map(reset,clk,data_bit,bitsample,data_raw);
 APL: APPLICATION_LAYER_RX
     port map(clk, reset, bitsample, preamble, data, seg7);
-
+preamble <= data_raw(10 DOWNTO 4);
+data <= data_raw(3 DOWNTO 0);
 end Behavioral;
