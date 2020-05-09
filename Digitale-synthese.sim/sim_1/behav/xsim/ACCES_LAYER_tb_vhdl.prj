@@ -1,8 +1,0 @@
-# compile vhdl design source files
-vhdl xil_defaultlib  \
-"../../../../Sources/sources_1/new/ACCES_LAYER.vhd" \
-"../../../../Sources/sources_1/new/PNGENERATOR.vhd" \
-"../../../../Sources/sim_1/new/TB_ACCES_LAYER.vhd" \
-
-# Do not sort compile order
-nosort

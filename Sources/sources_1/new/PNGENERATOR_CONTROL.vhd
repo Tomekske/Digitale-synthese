@@ -40,7 +40,7 @@ process(clk,reset)begin
             if(shift = '1')then
                 PNCODE1_pres <= PNCODE1_next;   -- Load the next state in the memory
                 PNCODE2_pres <= PNCODE2_next;   -- ""
-            elsif(clear <= '1')then
+            elsif(clear = '1')then
                 PNCODE1_pres <= PNCODE1;    -- Load the start code for PNCODE1
                 PNCODE2_pres <= PNCODE2;    -- Load the start code for PNCODE2
             end if;
