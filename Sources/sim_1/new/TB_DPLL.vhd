@@ -13,6 +13,7 @@ component DPLL2
         clk         : IN STD_LOGIC;     -- Clk signal
         reset       : IN STD_LOGIC;     -- Reset signal
         sdi_spread  : IN STD_LOGIC;
+        extb        : OUT STD_LOGIC;
         chip_0      : OUT STD_LOGIC;
         chip_1      : OUT STD_LOGIC;
         chip_2      : OUT STD_LOGIC
@@ -28,6 +29,7 @@ signal end_of_sim   : boolean := false;
 SIGNAL clk         : STD_LOGIC;     -- Clk signal
 SIGNAL reset       : STD_LOGIC;     -- Reset signal
 SIGNAL sdi_spread  : STD_LOGIC;
+SIGNAL extb        : STD_LOGIC;
 SIGNAL chip_0      : STD_LOGIC;
 SIGNAL chip_1      : STD_LOGIC;
 SIGNAL chip_2      : STD_LOGIC;   
@@ -35,7 +37,7 @@ SIGNAL chip_2      : STD_LOGIC;
 BEGIN
 
 uut: DPLL2
-    PORT MAP(clk, reset, sdi_spread, chip_0, chip_1, chip_2);
+    PORT MAP(clk, reset, sdi_spread, extb, chip_0, chip_1, chip_2);
 
 clock : process
     begin 
