@@ -1,5 +1,9 @@
--- TOMEK JOOSTENS
--- MODULE : DATA_LATCH
+---------------------------------------------------------------------
+-- DEV		: Tomek Joostens
+-- ACADEMIC : KULEUVEN 2019-2020 CAMPUS DE NAYER
+-- MODULE	: DATA_LATCH
+-- INFO		: Deze stuurt een binaire output uit waarmee 7 segmenten kunnnen aangestuurd worden
+---------------------------------------------------------------------
 
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
@@ -27,6 +31,7 @@ process(reset, clk) begin
     if(reset = '1') then
         data_dff <= (others => '0');
     else
+        -- Een latch die zijn waarde bewaard als bit_sample OF preamble niet gelijk is aan het patroon
         if(rising_edge(clk)) then
             if((bit_sample = '1') and (preamble = preamble_ptrn)) then
                 data_dff <= data_in;
