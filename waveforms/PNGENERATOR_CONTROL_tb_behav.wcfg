@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="PNGENERATOR_CONTROL_tb_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="PNGENERATOR_CONTROL_tb" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="0fs"></ZoomStartTime>
+      <ZoomEndTime time="23850000fs"></ZoomEndTime>
+      <Cursor1Time time="7417913fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="175"></NameColumnWidth>
+      <ValueColumnWidth column_width="94"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="10" />
+   <wvobject fp_name="/PNGENERATOR_CONTROL_tb/end_of_sim" type="other">
+      <obj_property name="ElementShortName">end_of_sim</obj_property>
+      <obj_property name="ObjectShortName">end_of_sim</obj_property>
+   </wvobject>
+   <wvobject fp_name="/PNGENERATOR_CONTROL_tb/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/PNGENERATOR_CONTROL_tb/reset" type="logic">
+      <obj_property name="ElementShortName">reset</obj_property>
+      <obj_property name="ObjectShortName">reset</obj_property>
+   </wvobject>
+   <wvobject fp_name="/PNGENERATOR_CONTROL_tb/shift" type="logic">
+      <obj_property name="ElementShortName">shift</obj_property>
+      <obj_property name="ObjectShortName">shift</obj_property>
+      <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/PNGENERATOR_CONTROL_tb/clear" type="logic">
+      <obj_property name="ElementShortName">clear</obj_property>
+      <obj_property name="ObjectShortName">clear</obj_property>
+      <obj_property name="CustomSignalColor">#FF00FF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/PNGENERATOR_CONTROL_tb/pn_start" type="logic">
+      <obj_property name="ElementShortName">pn_start</obj_property>
+      <obj_property name="ObjectShortName">pn_start</obj_property>
+      <obj_property name="CustomSignalColor">#FF00FF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/PNGENERATOR_CONTROL_tb/full_seq" type="logic">
+      <obj_property name="ElementShortName">full_seq</obj_property>
+      <obj_property name="ObjectShortName">full_seq</obj_property>
+   </wvobject>
+   <wvobject fp_name="/PNGENERATOR_CONTROL_tb/pn_sig0" type="logic">
+      <obj_property name="ElementShortName">pn_sig0</obj_property>
+      <obj_property name="ObjectShortName">pn_sig0</obj_property>
+      <obj_property name="CustomSignalColor">#FFFF00</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/PNGENERATOR_CONTROL_tb/pn_sig1" type="logic">
+      <obj_property name="ElementShortName">pn_sig1</obj_property>
+      <obj_property name="ObjectShortName">pn_sig1</obj_property>
+      <obj_property name="CustomSignalColor">#FFA500</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/PNGENERATOR_CONTROL_tb/pn_sig2" type="logic">
+      <obj_property name="ElementShortName">pn_sig2</obj_property>
+      <obj_property name="ObjectShortName">pn_sig2</obj_property>
+      <obj_property name="CustomSignalColor">#D2691E</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+</wave_config>
