@@ -63,9 +63,6 @@ shift_next(0) <= sdi_spread; -- Concatenate de sdi_spread bit
 
 -- vergelijken van de patronen en de seq_det output bepalen 
 process(shift_pres, pn_ptrn) begin
-    --if(rising_edge(clk)) then
-    
-    -- end if;
     if((pn_ptrn = shift_pres) or (not(pn_ptrn) = shift_pres)) then
         seq_det_raw <= '1';
     else

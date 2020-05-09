@@ -1,6 +1,6 @@
 -- JORDY DE HOON
 -- MODULE : DPLL
--- INFO : 
+-- INFO : CHECK DPLL2
 library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;

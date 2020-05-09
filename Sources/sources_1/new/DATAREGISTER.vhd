@@ -1,7 +1,6 @@
 -- JORDY DE HOON / TOMEK JOOSTENS
--- FILE: DEBOUNCER
+-- FILE: DATAREGSITER
 
--- FF nodig
 library ieee;
 use ieee.std_logic_1164.all;
 entity DATAREGISTER is

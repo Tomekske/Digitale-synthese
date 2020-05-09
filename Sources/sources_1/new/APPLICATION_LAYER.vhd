@@ -1,6 +1,6 @@
 -- JORDY DE HOON & TOMEK JOOSTENS
--- MODULE : EDGEDETECT_STATE
--- INFO : Using a state machine to track the state of sig and generate a puls on the rising edge
+-- MODULE : APPLICATION LAYER
+
 library ieee;
 use ieee.std_logic_1164.all;
 entity APPLICATION_LAYER is
@@ -20,7 +20,7 @@ architecture Behavioral OF APPLICATION_LAYER IS
 component DEBOUNCER is
 	port (	cha		:	IN STD_LOGIC;
 			clk		:	IN STD_LOGIC;
-			reset	:	IN STD_LOGIC;	-- Active high signal
+			reset	:	IN STD_LOGIC;	
 			syncha	:	OUT STD_LOGIC
 	);
 end component;

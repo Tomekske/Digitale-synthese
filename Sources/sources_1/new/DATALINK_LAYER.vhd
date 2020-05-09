@@ -1,6 +1,6 @@
 -- JORDY DE HOON & TOMEK JOOSTENS
--- MODULE : EDGEDETECT_STATE
--- INFO : Using a state machine to track the state of sig and generate a puls on the rising edge
+-- MODULE : DATALINK LAYER
+
 library ieee;
 use ieee.std_logic_1164.all;
 entity DATALINK_LAYER is

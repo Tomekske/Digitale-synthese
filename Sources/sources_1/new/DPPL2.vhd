@@ -12,6 +12,7 @@ entity DPLL2 is
             clk         : IN STD_LOGIC;     -- Clk signal
             reset       : IN STD_LOGIC;     -- Reset signal
             sdi_spread  : IN STD_LOGIC;
+            extb        : OUT STD_LOGIC;
             chip_0      : OUT STD_LOGIC;
             chip_1      : OUT STD_LOGIC;
             chip_2      : OUT STD_LOGIC
@@ -60,13 +61,15 @@ end process;
 -- TRANSITION SEGMENT DECODER [TSD]
 -- COUNTER from 0 to 15 decimal + position decoder
 process(reset,clk)begin
-    if(reset = '1')then
+    if(reset = '1')then     -- RESET COUNTER
         tsd_counter <= (OTHERS => '0');
-    else 
+    else
         if(rising_edge(clk))then
             if((sdi_spread XOR td_sdi_delay) = '1')then
+                -- SYNC EDGE DETECT : REACTS FASTER
                 tsd_counter <= (OTHERS => '0');
             else
+                -- ELSE load next state
                 tsd_counter <= tsd_counter_next;
             end if;
         end if;
@@ -74,13 +77,8 @@ process(reset,clk)begin
 end process;
 
 process(td_extb, tsd_counter, tsd_counter_next,sdi_spread,td_sdi_delay)begin
-    -- COUNTER component : counts 0 to 15 with overflow to reload automatic.
---    if(td_extb = '1')then      -- LOAD SIGNAL TO RESET THE COUNTER (load with zero's)
---        tsd_counter_next <= (OTHERS => '0');
---    else                    -- Next state is increment of current state
-        tsd_counter_next <= tsd_counter + 1;
---    end if;
-
+    -- NEXT STATE DECODER
+    tsd_counter_next <= tsd_counter + 1;
     -- DECODER component
     if(tsd_counter >= 11) then
         tsd_segmode <= "10000";
@@ -99,24 +97,25 @@ end process;
 ----------------------------------------------------------------------------------------
 -- SEGMENT SEMAPHORE [SS]
 -- sema_mode is a SRFF to SET or RESET the "mode" of the MUX
+-- This mode indicates if we need to still tweak the signal or just use the older state
 process(reset, clk)begin
     if(reset = '1')then             -- ASYNC RESET
         ss_semamode <= '0';
         ss_semacode_prev <= (OTHERS => '0');
     else
         if(rising_edge(clk))then
-            if(td_extb = '1')then      -- SRFF
-                ss_semamode <= '1';  -- SET
+            if(td_extb = '1')then    -- SRFF
+                ss_semamode <= '1';  -- SET SIGNAL
             elsif(nco_zero = '1')then
-                ss_semamode <= '0';  -- RESET
+                ss_semamode <= '0';  -- RESET SIGNAL
             end if;
-            ss_semacode_prev <= ss_semacode;
+            ss_semacode_prev <= ss_semacode;    -- DFF OF THE SEMACODE
         end if;
     end if;
 end process;
 
 process(ss_semamode, tsd_segmode)begin
-    if(ss_semamode = '1')then       -- 2MUX1 WITH
+    if(ss_semamode = '1')then       -- 2MUX1
         ss_semacode <= tsd_segmode; 
     else
         ss_semacode <= ss_semacode_prev; -- DELAYED OUTPUT TO INPUT (DFF)
@@ -151,7 +150,7 @@ process(ss_semacode,ss_semacode_prev, nco_counter, nco_counter_rl)begin
         nco_counter_next <= nco_counter - 1;    -- Else next state is one less
     end if;
     -- sema decoder for reload values.
-    case(ss_semacode) is
+    case(ss_semacode) is    -- TWEAK ONE EXTRA BIT FOR REACTION DELAY COMPENSATION
         when "00001" =>     -- A
             nco_counter_rl <=  STD_LOGIC_VECTOR(TO_UNSIGNED(15 + 4 ,6));
         when "00010" =>     -- B
@@ -186,5 +185,6 @@ od_chip0 <= nco_zero;   -- Link nco_zero to od_chip0
 chip_0 <= od_chip0;     -- link od_chip0 to chip0
 chip_1 <= od_chip1;     -- ""
 chip_2 <= od_chip2;     -- ""
+extb <= td_extb;
 
 end Behavioral;
