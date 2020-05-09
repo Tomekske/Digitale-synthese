@@ -22,11 +22,32 @@ end APPLICATION_LAYER_RX;
 
 architecture Behavioral OF APPLICATION_LAYER_RX IS
 -- SIGNALS HERE
+SIGNAL DL_data_out  : STD_LOGIC_VECTOR(3 DOWNTO 0);
+-- COMPONENTS
+-- DATA LATCH
+component DATA_LATCH is
+    Port ( 
+        clk         : IN STD_LOGIC;
+        reset       : IN STD_LOGIC;     -- Reset signal
+        bit_sample  : IN STD_LOGIC;
+        preamble    : IN STD_LOGIC_VECTOR(6 downto 0);
+        data_in     : IN STD_LOGIC_VECTOR(3 downto 0);
+        data_out    : OUT STD_LOGIC_VECTOR(3 downto 0)
+    );
+end component;
+-- 7SEGMENNT DECODER
+component SEG7DEC is
+    Port( 
+        data_in  : in STD_LOGIC_VECTOR (3 downto 0); -- input data
+        g_to_a   : out STD_LOGIC_VECTOR (6 downto 0) -- 7 segment output: [0-9][A-F]
+    ); 
+end component;
 begin
--- SYNC COMPONENT HERE
 
--- COMB COMPONENT HERE
+DL: DATALATCH
+    port map(clk, reset, bit_sample, preamble, data, DL_data_out);
 
--- LINKING SIGNALS HERE
+SEG7: SEG7DEC
+    port map(DL_data_out,7seg);
 
 end Behavioral;
