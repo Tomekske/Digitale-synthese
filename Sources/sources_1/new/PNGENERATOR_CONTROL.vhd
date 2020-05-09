@@ -28,6 +28,10 @@ architecture Behavioral OF PNGENERATOR_CONTROL IS
     SIGNAL PNCODE2_pres     :  STD_LOGIC_VECTOR(4 DOWNTO 0);       -- ""                            for PNCODE2
     SIGNAL PNCODE1_next     :  STD_LOGIC_VECTOR(4 DOWNTO 0);       -- Next state decoder for PNCODE1
     SIGNAL PNCODE2_next     :  STD_LOGIC_VECTOR(4 DOWNTO 0);       -- ""                 for PNCODE2
+    SIGNAL NCO_seq          :  STD_LOGIC;
+    SIGNAL NCO_seq_dff      :  STD_LOGIC;
+    SIGNAL PN_seq           :  STD_LOGIC;
+    SIGNAL PN_seq_dff       :  STD_LOGIC;
 begin
 
 -- SYNC COMP
@@ -35,6 +39,8 @@ process(clk,reset)begin
     if(reset = '1')then         -- When reset is active
         PNCODE1_pres <= PNCODE1;    -- Load the start code for PNCODE1
         PNCODE2_pres <= PNCODE2;    -- Load the start code for PNCODE2
+        pn_start <= '0';
+        full_seq <= '0';
     else
         if (rising_edge(clk)) then      -- Reset low and rising edge on the clock
             if(shift = '1')then
@@ -44,12 +50,26 @@ process(clk,reset)begin
                 PNCODE1_pres <= PNCODE1;    -- Load the start code for PNCODE1
                 PNCODE2_pres <= PNCODE2;    -- Load the start code for PNCODE2
             end if;
+            -- DFF FOR RISING EDGE ON pn_start
+            PN_seq_dff <= PN_seq;
+            if((PN_seq = '1') AND (PN_seq_dff = '0'))then
+                pn_start <= '1';
+            else
+                pn_start <= '0';
+            end if;
+            -- DFF FOR RISING EDGE ON FULL_SEQ
+            NCO_seq_dff <= NCO_seq;
+            if((NCO_seq = '1') AND (NCO_seq_dff = '0'))then
+                full_seq <= '1';
+            else
+                full_seq <= '0';
+            end if;
         end if ;
     end if;
 end process;
 
 -- COMB COMP
-process(PNCODE1_pres) begin
+process(PNCODE1_pres,reset) begin
     PNCODE1_next(3 DOWNTO 0) <= PNCODE1_pres (4 DOWNTO 1);  -- Shift register
     PNCODE1_next(4) <= PNCODE1_pres(3) XOR PNCODE1_pres(0); -- Load bit calculation
 
@@ -57,17 +77,18 @@ process(PNCODE1_pres) begin
     PNCODE2_NEXT(4) <= ((PNCODE2_pres(0) XOR PNCODE2_pres(1)) XOR PNCODE2_pres(3) ) XOR PNCODE2_pres(4); -- Load bit calculation
 
     if((PNCODE1_pres = PNCODE1) AND (reset = '0'))then  -- When a sequence is detected and the reset is low
-        pn_start <= '1';    -- Enable the start signal (sequence detected)
+        PN_seq <= '1';    -- Enable the start signal (sequence detected)
     else
-        pn_start <= '0';    -- when reset active, force output to low
+        PN_seq <= '0';    -- when reset active, force output to low
     end if;
 
     if((PNCODE1_pres = PNCODE1NCO) AND (reset = '0'))then  -- When a sequence is detected and the reset is low
-        full_seq <= '1';    -- Enable
+        NCO_seq <= '1';    -- Enable
     else
-        full_seq <= '0';    -- Clear
+        NCO_seq <= '0';    -- Clear
     end if;
 end process;
+
 -- SIGNAL LINKING
 pn_sig0 <= PNCODE1_pres(0);     -- Link to pn_sig0
 pn_sig1 <= PNCODE2_pres(0);     -- Link to pn_sig1

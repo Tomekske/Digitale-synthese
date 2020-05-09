@@ -1,0 +1,12 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"../../../../Sources/sources_1/new/CORRELATOR.vhd" \
+"../../../../Sources/sources_1/new/DESPREADING.vhd" \
+"../../../../Sources/sources_1/new/DPPL2.vhd" \
+"../../../../Sources/sources_1/new/MATCHED_FILTER.vhd" \
+"../../../../Sources/sources_1/new/PNGENERATOR_CONTROL.vhd" \
+"../../../../Sources/sources_1/new/RX_ACCESS_LAYER.vhd" \
+"../../../../Sources/sim_1/new/TB_ACCESS_LAYER_RX.vhd" \
+
+# Do not sort compile order
+nosort

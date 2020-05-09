@@ -109,18 +109,18 @@ DESP: DESPREADING
     port map(sdi_spread,PN_seq,sdi_despread);
 
 CORR: CORRELATOR
-    port map(clk,reset,sdi_despread,PNGEN_fullseq,bitsample);
+    port map(clk,reset,DPLL_chip2,sdi_despread,PNGEN_fullseq,databit);
 
 -- 2MUX1 WITH OR PORT ON pn_mode SIGNAL
 process(pn_mode,MATCH_seqdet,DPLL_extb)begin
-    if((pn_mode(0) = '1') OR (pn_mode(1) = '1')then
+    if((pn_mode(0) = '1') OR (pn_mode(1) = '1'))then
         PNGEN_clear <= MATCH_seqdet; -- PN CODE SELECTED
     else
         PNGEN_clear <= DPLL_extb;    -- NO PN CODE
     end if;
 end process;
 
--- 4MUX1
+-- 4MUX1 TO SELECT THE CORRECT PN CODE FOR DESPREADING
 process(pn_mode,PNGEN_sig0,PNGEN_sig1,PNGEN_sig2)begin
     case(pn_mode) is
         when "01"   => PN_seq <= PNGEN_sig0; -- PN CODE 0
@@ -130,4 +130,6 @@ process(pn_mode,PNGEN_sig0,PNGEN_sig1,PNGEN_sig2)begin
     end case ;
 end process;
 
-    end Behavioral;
+bitsample <= PNGEN_fullseq;
+
+end Behavioral;
