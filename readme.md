@@ -23,7 +23,7 @@
 
 | Layer   | Module                        | Dev             | State       	 |
 | ------- | ----------------------------- | --------------- | -------------------|
-| APL     | DATALATCH                     | Tomek           | :free:    	 |
+| APL     | DATALATCH                     | Tomek           | :white_check_mark: |
 | APL     | **APPLICATIONLAYER**          | T/J             | :free:      	 |
 | DLL     | DATASHIFTREG	          | Jordy           | :white_check_mark: |
 | DLL     | **DATALINKLAYER**             | T/J             | :free:       	 |
