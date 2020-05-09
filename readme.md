@@ -33,7 +33,7 @@
 | ACL     | PNGENERATOR_CONTROL           | Jordy           | :white_check_mark: |
 | ACL     | DESPREADING			  | Jordy           | :white_check_mark: |
 | ACL     | CORRELATOR		          | Tomek           | :white_check_mark: |
-| ACL     | **ACCESLAYER**                | T/J             | :free:       	 |
+| ACL     | **ACCESLAYER**                | Jordy           | :white_check_mark: |
 | RX      | **RECEIVER**                  | T/J             | :free:       	 |
 
 ## Documentation:
