@@ -1,35 +1,6 @@
-----------------------------------------------------------------------------------
--- Company: 
--- Engineer: 
--- 
--- Create Date: 05/04/2020 02:47:21 PM
--- Design Name: 
--- Module Name: TB_MATCHED_FILTER - Behavioral
--- Project Name: 
--- Target Devices: 
--- Tool Versions: 
--- Description: 
--- 
--- Dependencies: 
--- 
--- Revision:
--- Revision 0.01 - File Created
--- Additional Comments:
--- 
-----------------------------------------------------------------------------------
-
-
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 
--- Uncomment the following library declaration if using
--- arithmetic functions with Signed or Unsigned values
---use IEEE.NUMERIC_STD.ALL;
-
--- Uncomment the following library declaration if instantiating
--- any Xilinx leaf cells in this code.
---library UNISIM;
---use UNISIM.VComponents.all;
 entity MATCHED_FILTER_tb is
 end MATCHED_FILTER_tb;
 
@@ -70,9 +41,7 @@ BEGIN
       seq_det => seq_det
     );
     
-    
 	clock : process
-	
 
    begin 
        clk <= '0';
@@ -96,7 +65,6 @@ tb : PROCESS
     begin
         reset <= stimvect(3);
         chip_sample <= stimvect(2);
-        --sdi_spread <= stimvect(2);
         dipswitches <= stimvect(1 DOWNTO 0);
     
         wait for period;

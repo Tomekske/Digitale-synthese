@@ -1,4 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<<<<<<< HEAD:Digitale-synthese.runs/synth_1/gen_run.xml
+<GenRun Id="synth_1" LaunchPart="xc7k70tfbv676-1" LaunchTime="1588855664">
+  <File Type="PA-TCL" Name="ACCES_LAYER_tb.tcl"/>
+  <File Type="REPORTS-TCL" Name="ACCES_LAYER_tb_reports.tcl"/>
+  <File Type="RDS-RDS" Name="ACCES_LAYER_tb.vds"/>
+  <File Type="RDS-DCP" Name="ACCES_LAYER_tb.dcp"/>
+=======
 <GenRun Id="synth_1" LaunchPart="xc7a35tlcpg236-2L" LaunchTime="1589045661">
   <File Type="PA-TCL" Name="TRANSMITTER.tcl"/>
   <File Type="RDS-PROPCONSTRS" Name="TRANSMITTER_drc_synth.rpt"/>
@@ -9,6 +16,7 @@
   <File Type="RDS-DCP" Name="TRANSMITTER.dcp"/>
   <File Type="VDS-TIMINGSUMMARY" Name="TRANSMITTER_timing_summary_synth.rpt"/>
   <File Type="VDS-TIMING-PB" Name="TRANSMITTER_timing_summary_synth.pb"/>
+>>>>>>> master:project_1.runs/synth_1/gen_run.xml
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
     <Filter Type="Srcs"/>
     <File Path="$PPRDIR/Sources/sources_1/new/ACCES_LAYER.vhd">
