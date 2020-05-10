@@ -24,17 +24,17 @@
 | Layer   | Module                        | Dev             | State       	 |
 | ------- | ----------------------------- | --------------- | -------------------|
 | APL     | DATALATCH                     | Tomek           | :white_check_mark: |
-| APL     | **APPLICATIONLAYER**          | T/J             | :free:      	 |
+| APL     | **APPLICATIONLAYER**          | T/J             | :white_check_mark: |
 | DLL     | DATASHIFTREG	          | Jordy           | :white_check_mark: |
-| DLL     | **DATALINKLAYER**             | T/J             | :free:       	 |
+| DLL     | **DATALINKLAYER**             | T/J             | :white_check_mark: |
 | ACL     | DPLL                          | Jordy           | :white_check_mark: |
 | ACL     | DPLL2.0                       | Jordy           | :white_check_mark: |
-| ACL     | MATCHEDFILTER	          | Tomek           | :free:      	 |
+| ACL     | MATCHEDFILTER	          | Tomek           | :white_check_mark: |
 | ACL     | PNGENERATOR_CONTROL           | Jordy           | :white_check_mark: |
 | ACL     | DESPREADING			  | Jordy           | :white_check_mark: |
 | ACL     | CORRELATOR		          | Tomek           | :white_check_mark: |
 | ACL     | **ACCESLAYER**                | Jordy           | :white_check_mark: |
-| RX      | **RECEIVER**                  | T/J             | :free:       	 |
+| RX      | **RECEIVER**                  | T/J             | :white_check_mark: |
 
 ## Documentation:
 
