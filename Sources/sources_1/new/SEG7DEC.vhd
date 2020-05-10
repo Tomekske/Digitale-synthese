@@ -1,6 +1,9 @@
--- Tomek Joostens
--- MODULE : 7 segment decoder
--- INFO : 7 segment decodor outputting numbers between 0-9 and chars between A-F
+---------------------------------------------------------------------
+-- DEV		: TOMEK JOOSTENS
+-- ACADEMIC : KULEUVEN 2019-2020 CAMPUS DE NAYER
+-- MODULE	: SEG7DEC
+-- INFO		: 7 segment decodor outputting numbers between 0-9 and chars between A-F
+---------------------------------------------------------------------
 
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;

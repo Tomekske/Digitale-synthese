@@ -1,5 +1,9 @@
--- JORDY DE HOON
--- MODULE : SEQUENCECONTROLLER
+---------------------------------------------------------------------
+-- DEV		: JORDY DE HOON
+-- ACADEMIC : KULEUVEN 2019-2020 CAMPUS DE NAYER
+-- MODULE	: SEQUENCECONTROLLER
+-- INFO		:  
+---------------------------------------------------------------------
 
 library ieee;
 use ieee.std_logic_1164.all;

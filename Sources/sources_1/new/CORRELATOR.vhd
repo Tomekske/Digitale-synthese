@@ -25,8 +25,6 @@ architecture Behavioral of CORRELATOR is
 	
 	-- Dit is de treshold waarde voor de majority bepaling  
 	CONSTANT treshold : STD_LOGIC_VECTOR(5 DOWNTO 0) := "100000";
-	
-	SIGNAL MSB : STD_LOGIC;
 begin
 
 -- SYNC COMPONENT

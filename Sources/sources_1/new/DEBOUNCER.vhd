@@ -1,5 +1,9 @@
--- JORDY DE HOON / TOMEK JOOSTENS
--- FILE: DEBOUNCER
+---------------------------------------------------------------------
+-- DEV		: TOMEK JOOSTENS
+-- ACADEMIC : KULEUVEN 2019-2020 CAMPUS DE NAYER
+-- MODULE	: DEBOUNCER
+-- INFO		:  
+---------------------------------------------------------------------
 
 library ieee;
 use ieee.std_logic_1164.all;

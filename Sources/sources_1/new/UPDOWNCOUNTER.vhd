@@ -1,6 +1,9 @@
--- JORDY DE HOON
--- MODULE : UPDOWNCOUNTER
--- INFO : SYNCH UP DOWN COUNTER
+---------------------------------------------------------------------
+-- DEV		: JORDY DE HOON
+-- ACADEMIC : KULEUVEN 2019-2020 CAMPUS DE NAYER
+-- MODULE	: UPDOWNCOUNTER
+-- INFO		: SYNCH UP DOWN COUNTER
+---------------------------------------------------------------------
 
 library ieee;
 use ieee.std_logic_1164.all;
