@@ -80,42 +80,88 @@ tb : PROCESS
 
             for k in 0 to 10 loop
             -- NO PN CODE
-            pn_mode <= "00";
-            for i in 10 DOWNTO 0 loop
-                for j in 30 DOWNTO 0 loop
-                    sdi_spread <= tb_data_0(i);
-                    wait for 16*period;
+                pn_mode <= "00";
+                for i in 10 DOWNTO 0 loop
+                    for j in 30 DOWNTO 0 loop
+                        sdi_spread <= tb_data_0(i);
+                        wait for 16*period;
+                    end loop;
                 end loop;
-            end loop;
             end loop;
 
             for k in 0 to 10 loop
-            -- PN CODE 1
-            pn_mode <= "01";
-            for i in 10 DOWNTO 0 loop
-                for j in 30 DOWNTO 0 loop
-                    sdi_spread <= tb_data_1(i) XOR ml_1_ptrn(j);
-                    wait for 16*period;
+                -- NO PN CODE
+                pn_mode <= "00";
+                for i in 10 DOWNTO 0 loop
+                    for j in 30 DOWNTO 0 loop
+                        sdi_spread <= tb_data_1(i);
+                        wait for 16*period;
+                    end loop;
                 end loop;
             end loop;
-            end loop;
-            -- -- PN CODE 2
-            -- pn_mode <= "10";
-            -- for i in 10 DOWNTO 0 loop
-            --     for j in 30 DOWNTO 0 loop
-            --         sdi_spread <= tb_data(i) XOR ml_2_ptrn(j);
-            --         wait for 16*period;
-            --     end loop;
-            -- end loop;
 
-            -- -- PN CODE GOLD
-            -- pn_mode <= "11";
-            -- for i in 10 DOWNTO 0 loop
-            --     for j in 30 DOWNTO 0 loop
-            --         sdi_spread <= tb_data(i) XOR gold_code_ptrn(j);
-            --         wait for 16*period;
-            --     end loop;
-            -- end loop;
+            for k in 0 to 5 loop
+                -- PN CODE 1
+                pn_mode <= "01";
+                for i in 10 DOWNTO 0 loop
+                    for j in 30 DOWNTO 0 loop
+                        sdi_spread <= tb_data_0(i) XOR ml_1_ptrn(j);
+                        wait for 16*period;
+                    end loop;
+                end loop;
+                for i in 10 DOWNTO 0 loop
+                    for j in 30 DOWNTO 0 loop
+                        sdi_spread <= tb_data_1(i) XOR ml_1_ptrn(j);
+                        wait for 16*period;
+                    end loop;
+                end loop;
+            end loop;
+
+            for k in 0 to 5 loop
+                -- PN CODE 2
+                pn_mode <= "10";
+                for i in 10 DOWNTO 0 loop
+                    for j in 30 DOWNTO 0 loop
+                        sdi_spread <= tb_data_0(i) XOR ml_2_ptrn(j);
+                        wait for 16*period;
+                    end loop;
+                end loop;
+                for i in 10 DOWNTO 0 loop
+                    for j in 30 DOWNTO 0 loop
+                        sdi_spread <= tb_data_1(i) XOR ml_2_ptrn(j);
+                        wait for 16*period;
+                    end loop;
+                end loop;
+            end loop;
+
+            for k in 0 to 5 loop
+                -- PN CODE 3
+                pn_mode <= "11";
+                for i in 10 DOWNTO 0 loop
+                    for j in 30 DOWNTO 0 loop
+                        sdi_spread <= tb_data_0(i) XOR gold_code_ptrn(j);
+                        wait for 16*period;
+                    end loop;
+                end loop;
+                for i in 10 DOWNTO 0 loop
+                    for j in 30 DOWNTO 0 loop
+                        sdi_spread <= tb_data_1(i) XOR gold_code_ptrn(j);
+                        wait for 16*period;
+                    end loop;
+                end loop;
+            end loop;
+
+            -- DATA IN PNCODE 2 BUT SYSTEM IN PNCODE 1
+            for k in 0 to 5 loop
+                pn_mode <= "01";
+                for i in 10 DOWNTO 0 loop
+                    for j in 30 DOWNTO 0 loop
+                        sdi_spread <= tb_data_0(i) XOR ml_2_ptrn(j);
+                        wait for 16*period;
+                    end loop;
+                end loop;
+            end loop;
+
 
             wait for 10*period;
     end_of_sim <= true;

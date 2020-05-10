@@ -106,7 +106,7 @@ MATCHF: MATCHED_FILTER
     port map(clk,reset,DPLL_chip0,sdi_spread,pn_mode,MATCH_seqdet);
 
 PNGENC: PNGENERATOR_CONTROL
-    port map(clk,reset,DPLL_chip1,PNGEN_clear,PNGEN_pnstart,PNGEN_fullseq,PNGEN_sig0,PNGEN_sig1,PNGEN_sig2);
+    port map(clk,reset,DPLL_chip2,PNGEN_clear,PNGEN_pnstart,PNGEN_fullseq,PNGEN_sig0,PNGEN_sig1,PNGEN_sig2);
 
 DESP: DESPREADING
     port map(clk,reset,sdi_spread,PN_seq,DPLL_chip2,sdi_despread);
