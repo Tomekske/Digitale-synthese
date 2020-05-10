@@ -1,5 +1,9 @@
--- JORDY DE HOON / TOMEK JOOSTENS
--- FILE: DATAREGSITER
+---------------------------------------------------------------------
+-- DEV		: JORDY DE HOON / TOMEK JOOSTENS
+-- ACADEMIC : KULEUVEN 2019-2020 CAMPUS DE NAYER
+-- MODULE	: DATAREGSITER
+-- INFO		: 
+---------------------------------------------------------------------
 
 library ieee;
 use ieee.std_logic_1164.all;
