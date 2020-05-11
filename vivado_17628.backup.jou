@@ -1,0 +1,81 @@
+#-----------------------------------------------------------
+# Vivado v2019.2 (64-bit)
+# SW Build 2708876 on Wed Nov  6 21:40:23 MST 2019
+# IP Build 2700528 on Thu Nov  7 00:09:20 MST 2019
+# Start of session at: Sat May  9 23:25:11 2020
+# Process ID: 17628
+# Current directory: C:/Users/Jordy/git/Digitale-synthese
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent12144 C:\Users\Jordy\git\Digitale-synthese\project_1.xpr
+# Log file: C:/Users/Jordy/git/Digitale-synthese/vivado.log
+# Journal file: C:/Users/Jordy/git/Digitale-synthese\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/Jordy/git/Digitale-synthese/project_1.xpr
+update_compile_order -fileset sources_1
+export_ip_user_files -of_objects  [get_files C:/Users/Jordy/git/Digitale-synthese/Sources/sources_1/new/SEG7DEC.vhd] -no_script -reset -force -quiet
+remove_files  C:/Users/Jordy/git/Digitale-synthese/Sources/sources_1/new/SEG7DEC.vhd
+add_files -norecurse C:/Users/Jordy/git/Digitale-synthese/Sources/sources_1/new/SEG7DEC.vhd
+update_compile_order -fileset sources_1
+launch_simulation
+source RECEIEVER_tb.tcl
+relaunch_sim
+run all
+relaunch_sim
+run all
+current_wave_config {Untitled 2}
+add_wave {{/RECEIEVER_tb/uut/ACL/sdi_spread}} 
+current_wave_config {Untitled 2}
+add_wave {{/RECEIEVER_tb/uut/ACL/sdi_despread}} 
+relaunch_sim
+run all
+current_wave_config {Untitled 2}
+add_wave {{/RECEIEVER_tb/uut/ACL/DPLL_extb}} 
+relaunch_sim
+run all
+current_wave_config {Untitled 2}
+add_wave {{/RECEIEVER_tb/uut/ACL/DPLL_chip0}} 
+relaunch_sim
+run all
+relaunch_sim
+run all
+current_wave_config {Untitled 2}
+add_wave {{/RECEIEVER_tb/uut/DLL/pdo}} 
+relaunch_sim
+run all
+current_wave_config {Untitled 2}
+add_wave {{/RECEIEVER_tb/uut/ACL/CORR/count_pres}} 
+relaunch_sim
+run all
+current_wave_config {Untitled 2}
+add_wave {{/RECEIEVER_tb/uut/ACL/CORR/databit}} 
+current_wave_config {Untitled 2}
+add_wave {{/RECEIEVER_tb/uut/data_bit}} 
+relaunch_sim
+run all
+current_wave_config {Untitled 2}
+add_wave {{/RECEIEVER_tb/uut/ACL/DPLL_chip1}} 
+current_wave_config {Untitled 2}
+add_wave {{/RECEIEVER_tb/uut/ACL/DPLL_chip2}} 
+relaunch_sim
+run all
+current_wave_config {Untitled 2}
+add_wave {{/RECEIEVER_tb/uut/APL/preamble}} 
+relaunch_sim
+run all
+relaunch_sim
+run all
+relaunch_sim
+run all
+relaunch_sim
+run all
+relaunch_sim
+run all
+relaunch_sim
+run all
+relaunch_sim
+run all
+save_wave_config {C:/Users/Jordy/git/Digitale-synthese/waveforms/RECEIEVER_tb_behav.wcfg}
+relaunch_sim
+run all
+save_wave_config {C:/Users/Jordy/git/Digitale-synthese/waveforms/RECEIEVER_tb_behav.wcfg}
+close_sim

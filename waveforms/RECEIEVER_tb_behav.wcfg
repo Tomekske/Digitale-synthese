@@ -12,11 +12,11 @@
    <zoom_setting>
       <ZoomStartTime time="0fs"></ZoomStartTime>
       <ZoomEndTime time="35466650001fs"></ZoomEndTime>
-      <Cursor1Time time="15106569422fs"></Cursor1Time>
+      <Cursor1Time time="35466650000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="175"></NameColumnWidth>
-      <ValueColumnWidth column_width="74"></ValueColumnWidth>
+      <ValueColumnWidth column_width="70"></ValueColumnWidth>
    </column_width_setting>
    <WVObjectSize size="12" />
    <wvobject fp_name="/RECEIEVER_tb/end_of_sim" type="other">

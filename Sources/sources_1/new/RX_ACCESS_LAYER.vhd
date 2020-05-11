@@ -35,6 +35,7 @@ SIGNAL PNGEN_sig1       : STD_LOGIC;
 SIGNAL PNGEN_sig2       : STD_LOGIC;
 SIGNAL PN_seq           : STD_LOGIC;
 SIGNAL sdi_despread     : STD_LOGIC;
+SIGNAL CORR_input       : STD_LOGIC;
 -- COMPONENTS HERE
 -- DPLL VERSION 2
 component DPLL2 is
@@ -112,7 +113,7 @@ DESP: DESPREADING
     port map(clk,reset,sdi_spread,PN_seq,DPLL_chip2,sdi_despread);
 
 CORR: CORRELATOR
-    port map(clk,reset,DPLL_chip2,sdi_despread,PNGEN_fullseq,databit);
+    port map(clk,reset,DPLL_chip2,CORR_input,PNGEN_fullseq,databit);
 
 -- 2MUX1 WITH OR PORT ON pn_mode SIGNAL
 process(pn_mode,MATCH_seqdet,DPLL_extb)begin
@@ -130,6 +131,14 @@ process(pn_mode,PNGEN_sig0,PNGEN_sig1,PNGEN_sig2)begin
         when "10"   => PN_seq <= PNGEN_sig1; -- PN CODE 1
         when "11"   => PN_seq <= PNGEN_sig2; -- PN CODE 2 (GOLD)
         when others => PN_seq <= '0';   -- NO PN CODE
+    end case ;
+end process;
+
+-- 2MUX1 TO SELECT DESPREADING BLOCK OR DIRECT PASS TROUGH
+process(pn_mode,sdi_spread,sdi_despread)begin
+    case(pn_mode) is
+        when "00"   => CORR_input <= sdi_spread; -- PN CODE 0
+        when others => CORR_input <= sdi_despread;   -- NO PN CODE
     end case ;
 end process;
 
